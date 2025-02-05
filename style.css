@@ -7,16 +7,33 @@
     gap: 20px;
     padding: 20px;
 }
-
-.grid-item {
-    background-color: #ffffff;
+/* for large grid */
+.grid-item-one {
+    /* background-color: #ffffff; */
     padding: 20px;
     border: 1px solid #ccc;
     text-align: center;
+  
+}
+.grid-item-big {
+    /* background-color: #ffffff; */
+    padding: 20px;
+    border: 1px solid #ccc;
+    text-align: center;
+    grid-column-end: span 2;
+    grid-row-end: span 4;
 }
 .grid-item img {
-    width: 100%;
+    width: 50%;
     height: auto;
     display: block;
-    object-fit: cover;
+    object-fit: none;
+}
+img{
+    width: 100px;
+}
+body {
+background-image:url("/Assets/8410.jpg");
+background-size: 70%;
+
 }
