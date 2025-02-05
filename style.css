@@ -1,0 +1,22 @@
+.grid-container {
+	/* making the gird for the continer */
+	/* 8 colums  */
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+	grid-template-rows: repeat(20,1fr);
+    gap: 20px;
+    padding: 20px;
+}
+
+.grid-item {
+    background-color: #ffffff;
+    padding: 20px;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+.grid-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
