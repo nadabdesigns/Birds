@@ -33,7 +33,7 @@ img{
     width: 100px;
 }
 body {
-background-image:url("/Assets/bird_flock.jpeg");
+background-image:url("Assets/bird_flock.jpeg");
 background-size: 70%;
 
 }
