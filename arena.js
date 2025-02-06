@@ -13,10 +13,6 @@ document.head.appendChild(markdownIt)
 	// channel slug is refericeing arena channel
 let channelSlug = 'typography-and-interaction-too' // The “slug” is just the end of the URL
 
-let greetingPerson = (name) => {
-console.log(`ello,${name}`)
-
-}
 
 
 // Now that we have said what we can do, go get the data:
@@ -24,6 +20,8 @@ fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-stor
 	.then((response) => response.json()) // Return it as JSON data
 	.then((data) => { // Do stuff with the data
 		console.log(data) // Always good to check your response!
+		console.log(data.title)
+		console.log(data.owner.full_name)
 		// placeChannelInfo(data) // Pass the data to the first function
 
 		// // Loop through the `contents` array (list), backwards. Are.na returns them in reverse!
