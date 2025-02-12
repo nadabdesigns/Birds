@@ -59,6 +59,10 @@ let renderBlock = (block) => {
 	// Images!
 	else if (block.class == 'Image') {
 		console.log(block)
+		let imageItem = `<li class="block bock--image">
+		<figure>
+		<img src"$
+		`
 	}
 
 	// // Text!
