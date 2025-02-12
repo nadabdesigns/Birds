@@ -37,6 +37,9 @@ background-image:url("Assets/bird_flock.jpeg");
 background-size: 70%;
 
 }
+.block--link{
+    color:blue
+}
 
 aside{
     opacity: 50%;
