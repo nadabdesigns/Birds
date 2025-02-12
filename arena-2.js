@@ -30,13 +30,13 @@ let renderBlock = (block) => {
 			<li>
 				<p><em>Link</em></p>
 				<picture>
-					<source media="(max-width: 428px)" srcset="${ block.image.thumb.url }">
-					<source media="(max-width: 640px)" srcset="${ block.image.large.url }">
-					<img src="${ block.image.original.url }">
+					<source media="(max-width: 428px)" srcset="${block.image.thumb.url}">
+					<source media="(max-width: 640px)" srcset="${block.image.large.url}">
+					<img src="${block.image.original.url}">
 				</picture>
-				<h3>${ block.title }</h3>
-				${ block.description_html }
-				<p><a href="${ block.source.url }">See the original ↗</a></p>
+				<h3>${block.title}</h3>
+				${block.description_html}
+				<p><a href="${block.source.url}">See the original ↗</a></p>
 			</li>
 			`
 		channelBlocks.insertAdjacentHTML('beforeend', linkItem)
@@ -63,7 +63,7 @@ let renderBlock = (block) => {
 				`
 				<li>
 					<p><em>Video</em></p>
-					<video controls src="${ block.attachment.url }"></video>
+					<video controls src="${block.attachment.url}"></video>
 				</li>
 				`
 			channelBlocks.insertAdjacentHTML('beforeend', videoItem)
@@ -83,7 +83,7 @@ let renderBlock = (block) => {
 				`
 				<li>
 					<p><em>Audio</em></p>
-					<audio controls src="${ block.attachment.url }"></video>
+					<audio controls src="${block.attachment.url}"></video>
 				</li>
 				`
 			channelBlocks.insertAdjacentHTML('beforeend', audioItem)
@@ -102,7 +102,7 @@ let renderBlock = (block) => {
 				`
 				<li>
 					<p><em>Linked Video</em></p>
-					${ block.embed.html }
+					${block.embed.html}
 				</li>
 				`
 			channelBlocks.insertAdjacentHTML('beforeend', linkedVideoItem)
@@ -123,11 +123,30 @@ let renderUser = (user, container) => { // You can have multiple arguments for a
 	let userAddress =
 		`
 		<address>
-			<img src="${ user.avatar_image.display }">
-			<h3>${ user.first_name }</h3>
-			<p><a href="https://are.na/${ user.slug }">Are.na profile ↗</a></p>
+			<img src="${user.avatar_image.display}">
+			<h3>${user.first_name}</h3>
+			<p><a href="https://are.na/${user.slug}">Are.na profile ↗</a></p>
 		</address>
 		`
 	container.insertAdjacentHTML('beforeend', userAddress)
 }
 
+// Now that we have said what we can do, go get the data:
+fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-store' })
+	.then((response) => response.json()) // Return it as JSON data
+	.then((data) => { // Do stuff with the data
+		console.log(data) // Always good to check your response!
+		
+		placeChannelInfo(data) // Pass the data to the first function
+
+		// Loop through the `contents` array (list), backwards. Are.na returns them in reverse!
+		data.contents.reverse().forEach((block) => {
+			// console.log(block) // The data for a single block
+			renderBlock(block) // Pass the single block data to the render function
+		})
+
+		// Also display the owner and collaborators:
+		let channelUsers = document.querySelector('#channel-users') // Show them together
+		data.collaborators.forEach((collaborator) => renderUser(collaborator, channelUsers))
+		renderUser(data.user, channelUsers)
+	})
