@@ -62,14 +62,21 @@ let renderBlock = (block) => {
 		let imageItem =
 			`
 			<img src="${block.image.large.url}" alt="${block.title} by ${block.user.full_name}">
+			<figcaption> ${block.title}</figcaption>
 			`
 			channelBlocks.insertAdjacentHTML('beforeend', imageItem)
 	}
 
-	// // Text!
-	// else if (block.class == 'Text') {
-	// 	// …up to you!
-	// }
+	// Text!
+	else if (block.class == 'Text') {
+		let textBlock =
+		`
+		<img src="${block.image.large.url}" alt="${block.title} by ${block.user.full_name}">
+		<figcaption> ${block.title}</figcaption>
+		`
+		channelBlocks.insertAdjacentHTML('beforeend', imageItem)
+		// …up to you!
+	}
 
 	// // Uploaded (not linked) media…
 	// else if (block.class == 'Attachment') {
