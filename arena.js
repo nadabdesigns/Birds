@@ -8,9 +8,9 @@ document.head.appendChild(markdownIt)
 
 // Okay, Are.na stuff!
 // Declaring a vrible
-	// varible name is channelSlug it's assigned it to typogrphy-and-ineraction-too
-	// signle quates are a string
-	// channel slug is refericeing arena channel
+// varible name is channelSlug it's assigned it to typogrphy-and-ineraction-too
+// signle quates are a string
+// channel slug is refericeing arena channel
 let channelSlug = 'typography-and-interaction-too' // The “slug” is just the end of the URL
 
 // First, let’s lay out some *functions*, starting with our basic metadata:
@@ -59,10 +59,11 @@ let renderBlock = (block) => {
 	// Images!
 	else if (block.class == 'Image') {
 		console.log(block)
-		let imageItem = `<li class="block bock--image">
-		<figure>
-		<img src"$
-		`
+		let imageItem =
+			`
+			<img src="${block.image.large.url}" alt="${block.title} by ${block.user.full_name}">
+			`
+			channelBlocks.insertAdjacentHTML('beforeend', imageItem)
 	}
 
 	// // Text!
@@ -145,7 +146,7 @@ fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-stor
 	.then((data) => { // Do stuff with the data
 		console.log(data) // Always good to check your response!
 		placeChannelInfo(data) // Pass the data to the first function
-		
+
 
 
 		// Loop through the `contents` array (list), backwards. Are.na returns them in reverse!
