@@ -33,6 +33,8 @@ let renderBlock = (block) => {
 	// To start, a shared `ul` where we’ll insert all our blocks
 	let channelBlocks = document.querySelector('#channel-blocks')
 
+	console.log(block.class)
+
 	// Links!
 	if (block.class == 'Link') {
 		let linkItem =
