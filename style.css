@@ -29,6 +29,10 @@
     display: block;
     object-fit: none;
 }
+.date{
+
+    font-family: monospace;
+}
 img{
     width: 100px;
 }

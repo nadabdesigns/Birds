@@ -38,6 +38,7 @@ let renderBlock = (block) => {
 
 	// Links!
 	if (block.class == 'Link') {
+		console.log(block)
 		let linkItem =
 			`
 			<li class="block block--link">
@@ -48,7 +49,7 @@ let renderBlock = (block) => {
 					<img src="${block.image.original.url}">
 				</picture>
 				<h3>${block.title}</h3>
-				${block.description_html}
+				<p class="date">${block.created_at}<p>
 				<p><a href="${block.source.url}">See the original ↗</a></p>
 			</li>
 			`
@@ -56,9 +57,9 @@ let renderBlock = (block) => {
 	}
 
 	// Images!
-	// else if (block.class == 'Image') {
-	// 	// …up to you!
-	// }
+	else if (block.class == 'Image') {
+		console.log(block)
+	}
 
 	// // Text!
 	// else if (block.class == 'Text') {
