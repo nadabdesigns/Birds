@@ -39,10 +39,12 @@ fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-stor
 		console.log(data) // Always good to check your response!
 		
 		placeChannelInfo(data) // Pass the data to the first function
+		
+
 
 		// Loop through the `contents` array (list), backwards. Are.na returns them in reverse!
 		data.contents.reverse().forEach((block) => {
-			// console.log(block) // The data for a single block
+			console.log(block) // The data for a single block
 			renderBlock(block) // Pass the single block data to the render function
 		})
 
