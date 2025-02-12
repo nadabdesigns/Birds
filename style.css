@@ -29,6 +29,9 @@
     display: block;
     object-fit: none;
 }
+strong{
+    font-weight: bold;
+}
 .date{
 
     font-family: monospace;
@@ -51,4 +54,9 @@ aside{
 p + p {
 
     margin-top: 1em;
+}
+/* lookes for block text and the a block quote next to it and then targest the p tag */
+.block--text blockquote + p{
+
+    color: red;
 }

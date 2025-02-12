@@ -69,12 +69,17 @@ let renderBlock = (block) => {
 
 	// Text!
 	else if (block.class == 'Text') {
-		let textBlock =
+		console.log(block)
+		console.log("i'm a block")
+		let textItem =
+		`<p class="block block--text">
+		${block.content_html}
+		
+		</p>
+	
 		`
-		<img src="${block.image.large.url}" alt="${block.title} by ${block.user.full_name}">
-		<figcaption> ${block.title}</figcaption>
-		`
-		channelBlocks.insertAdjacentHTML('beforeend', imageItem)
+		// inserting text block above html
+		channelBlocks.insertAdjacentHTML('beforeend', textItem)
 		// …up to you!
 	}
 
