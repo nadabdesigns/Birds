@@ -11,10 +11,13 @@ document.head.appendChild(markdownIt)
 // varible name is channelSlug it's assigned it to typogrphy-and-ineraction-too
 // signle quates are a string
 // channel slug is refericeing arena channel
-let channelSlug = 'typography-and-interaction-too' // The “slug” is just the end of the URL
+// this is my channel ideifyer 
+let channelSlug = 'project-4-birds' // The “slug” is just the end of the URL
 
 // First, let’s lay out some *functions*, starting with our basic metadata:
 let placeChannelInfo = (data) => {
+	// data is everything 
+	console.log('THIS IS DATA', data)
 	// Target some elements in your HTML:
 	let channelTitle = document.querySelector('#channel-title')
 	let channelDescription = document.querySelector('#channel-description')
@@ -34,11 +37,11 @@ let renderBlock = (block) => {
 	// To start, a shared `ul` where we’ll insert all our blocks
 	let channelBlocks = document.querySelector('#channel-blocks')
 
-	console.log(block.class)
+	// console.log("block",block);
 
 	// Links!
 	if (block.class == 'Link') {
-		console.log(block)
+		// console.log(block)
 		let linkItem =
 			`
 			<li class="block block--link">
@@ -57,17 +60,22 @@ let renderBlock = (block) => {
 	}
 
 	// Images!
+	// cecking block to see if it's an image
 	else if (block.class == 'Image') {
-		console.log(block)
+		
+		// create image
 		let imageItem =
+		
 			`
 			<img src="${block.image.large.url}" alt="${block.title} by ${block.user.full_name}">
 			<figcaption> ${block.title}</figcaption>
+
 			`
 			channelBlocks.insertAdjacentHTML('beforeend', imageItem)
 	}
 
 	// Text!
+
 	else if (block.class == 'Text') {
 		console.log(block)
 		console.log("i'm a block")
@@ -76,75 +84,84 @@ let renderBlock = (block) => {
 		${block.content_html}
 		
 		</p>
-	
 		`
 		// inserting text block above html
 		channelBlocks.insertAdjacentHTML('beforeend', textItem)
 		// …up to you!
 	}
 
-	// // Uploaded (not linked) media…
-	// else if (block.class == 'Attachment') {
-	// 	let attachment = block.attachment.content_type // Save us some repetition
+	// Uploaded (not linked) media…
+	else if (block.class == 'Attachment') {
+		let attachment = block.attachment.content_type // Save us some repetition
 
-	// 	// Uploaded videos!
-	// 	if (attachment.includes('video')) {
-	// 		// …still up to you, but we’ll give you the `video` element:
-	// 		let videoItem =
-	// 			`
-	// 			<li>
-	// 				<p><em>Video</em></p>
-	// 				<video controls src="${block.attachment.url}"></video>
-	// 			</li>
-	// 			`
-	// 		channelBlocks.insertAdjacentHTML('beforeend', videoItem)
-	// 		// More on video, like the `autoplay` attribute:
-	// 		// https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video
-	// 	}
+		// Uploaded videos!
+		if (attachment.includes('video')) {
+			// …still up to you, but we’ll give you the `video` element:
+			let videoItem =
+				`
+				<li>
+					<p><em>Video</em></p>
+					<video controls src="${block.attachment.url}"></video>
+				</li>
+				`
+			channelBlocks.insertAdjacentHTML('beforeend', videoItem)
+			// More on video, like the `autoplay` attribute:
+			// https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video
+		}
 
-	// 	// Uploaded PDFs!
-	// 	else if (attachment.includes('pdf')) {
-	// 		// …up to you!
-	// 	}
+		// Uploaded PDFs!
+		else if (attachment.includes('pdf')) {
+			console.log('pdf',block)
+			let PDFItem =
 
-	// 	// Uploaded audio!
-	// 	else if (attachment.includes('audio')) {
-	// 		// …still up to you, but here’s an `audio` element:
-	// 		let audioItem =
-	// 			`
-	// 			<li>
-	// 				<p><em>Audio</em></p>
-	// 				<audio controls src="${block.attachment.url}"></video>
-	// 			</li>
-	// 			`
-	// 		channelBlocks.insertAdjacentHTML('beforeend', audioItem)
-	// 		// More on audio: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/audio
-	// 	}
-	// }
+				`
+				
+					<p>${block.generated_title}></p>
+				
+				`
+			// …up to you!
+		}
 
-	// // Linked media…
-	// else if (block.class == 'Media') {
-	// 	let embed = block.embed.type
+		// Uploaded audio!
+		else if (attachment.includes('audio')) {
+			// …still up to you, but here’s an `audio` element:
+			console.log('audio',block)
+			let audioItem =
+				`
+				<li>
+					<audio controls src="${block.attachment.url}"></audio>
+					<p>${block.title}</p>
+				</li>
+				`
+			channelBlocks.insertAdjacentHTML('beforeend', audioItem)
+			// More on audio: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/audio
+		}
+	}
 
-	// 	// Linked video!
-	// 	if (embed.includes('video')) {
-	// 		// …still up to you, but here’s an example `iframe` element:
-	// 		let linkedVideoItem =
-	// 			`
-	// 			<li>
-	// 				<p><em>Linked Video</em></p>
-	// 				${block.embed.html}
-	// 			</li>
-	// 			`
-	// 		channelBlocks.insertAdjacentHTML('beforeend', linkedVideoItem)
-	// 		// More on iframe: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe
-	// 	}
+	// Linked media…
+	else if (block.class == 'Media') {
+		console.log('Media',block)
+		let embed = block.embed.type
 
-	// 	// Linked audio!
-	// 	else if (embed.includes('rich')) {
-	// 		// …up to you!
-	// 	}
-	// }
+		// Linked video!
+		if (embed.includes('video')) {
+			// …still up to you, but here’s an example `iframe` element:
+			let linkedVideoItem =
+				`
+				<li>
+					<p><em>Linked Video</em></p>
+					${block.embed.html}
+				</li>
+				`
+			channelBlocks.insertAdjacentHTML('beforeend', linkedVideoItem)
+			// More on iframe: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe
+		}
+
+		// Linked audio!
+		else if (embed.includes('rich')) {
+			// …up to you!
+		}
+	}
 }
 
 
@@ -156,7 +173,7 @@ let renderBlock = (block) => {
 fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-store' })
 	.then((response) => response.json()) // Return it as JSON data
 	.then((data) => { // Do stuff with the data
-		console.log(data) // Always good to check your response!
+		console.log("data",data) // Always good to check your response!
 		placeChannelInfo(data) // Pass the data to the first function
 
 
