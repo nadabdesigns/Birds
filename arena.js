@@ -13,6 +13,7 @@ document.head.appendChild(markdownIt)
 // channel slug is refericeing arena channel
 // this is my channel ideifyer 
 let channelSlug = 'project-4-birds' // The “slug” is just the end of the URL
+/*
 
 // First, let’s lay out some *functions*, starting with our basic metadata:
 let placeChannelInfo = (data) => {
@@ -163,7 +164,7 @@ let renderBlock = (block) => {
 		}
 	}
 }
-
+*/
 
 
 

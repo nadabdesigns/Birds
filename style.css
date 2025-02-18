@@ -1,13 +1,85 @@
-.grid-container {
-	/* making the gird for the continer */
-	/* 8 colums  */
+
+/* varibles */
+:root {
+    --color: rgb(255, 255, 255); /* set default value for "color" variable */
+    --color-2: rgb(0, 0, 0);
+    --h2: 30px;
+    --p: calc(var(--h2))
+  }
+
+/* style grid container*/
+body {
+    background-image:url("Assets/Dots\ Big.png");
+    background-size: 70%;
+    
+    }
+.grid-container-div{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+	/* grid-template-rows: repeat(20,1fr); */
+    gap: 20px;
+    padding: 20px;
+}
+.box-medium{
+width: 100%;
+ height: 100%;
+ background-color: pink;
+
+}
+.card{
+    /* auto will only fill the space that you give it */
+    width: auto;
+    height: auto;
+    background-color: var(--color);
+    padding: 20px;
+
+}
+img{
+    display: block;
+	width: 66%;
+    left: 2rem;
+}
+.img-top{
+    position: relative;
+    z-index: 1;
+}
+h2{
+color: #000;
+
+font-family: "ITC Avant Garde Gothic Pro";
+font-size: var(--h2--);
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+
+}
+p{
+    color: #000;
+font-family: Inter;
+font-size: var(--p);
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+
+
+
+
+
+
+
+
+
+/* .grid-container {
+	making the gird for the continer
+	8 colums 
     display: grid;
     grid-template-columns: repeat(8, 1fr);
 	grid-template-rows: repeat(20,1fr);
     gap: 20px;
     padding: 20px;
 }
-/* for large grid */
+for large grid
 .grid-item-one {
     background-color: #ffffff;
     padding: 20px;
@@ -16,7 +88,7 @@
   
 }
 .grid-item-big {
-    /* background-color: #ffffff; */
+    background-color: #ffffff;
     padding: 20px;
     border: 1px solid #ccc;
     text-align: center;
@@ -55,8 +127,8 @@ p + p {
 
     margin-top: 1em;
 }
-/* lookes for block text and the a block quote next to it and then targest the p tag */
+lookes for block text and the a block quote next to it and then targest the p tag
 .block--text blockquote + p{
 
     color: red;
-}
+} */
