@@ -3,8 +3,8 @@
 :root {
     --color: rgb(255, 255, 255); /* set default value for "color" variable */
     --color-2: rgb(0, 0, 0);
-    --h2: 30px;
-    --p: calc(var(--h2))
+    --h2: 60px;
+    --p: 24px;
   }
 
 /* style grid container*/
@@ -47,7 +47,7 @@ h2{
 color: #000;
 
 font-family: "ITC Avant Garde Gothic Pro";
-font-size: var(--h2--);
+font-size: var(--h2);
 font-style: normal;
 font-weight: 500;
 line-height: normal;
