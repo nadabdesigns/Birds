@@ -13,7 +13,7 @@ document.head.appendChild(markdownIt)
 // channel slug is refericeing arena channel
 // this is my channel ideifyer 
 let channelSlug = 'project-4-birds' // The “slug” is just the end of the URL
-/*
+
 
 // First, let’s lay out some *functions*, starting with our basic metadata:
 let placeChannelInfo = (data) => {
@@ -32,11 +32,17 @@ let placeChannelInfo = (data) => {
 	// channelLink.href = `https://www.are.na/channel/${channelSlug}`
 }
 
+let channelBlocks = document.querySelector('#birds-top-left')
+channelBlocks.addEventListener(image)
+
+
+
+ document.getElementById (birds-top-left)
 
 // Then our big function for specific-block-type rendering:
 let renderBlock = (block) => {
 	// To start, a shared `ul` where we’ll insert all our blocks
-	let channelBlocks = document.querySelector('#channel-blocks')
+	
 
 	// console.log("block",block);
 
@@ -51,7 +57,7 @@ let renderBlock = (block) => {
 					<source media="(max-width: 428px)" srcset="${block.image.thumb.url}">
 					<source media="(max-width: 640px)" srcset="${block.image.large.url}">
 					<img src="${block.image.original.url}">
-				</picture>
+				</picture>s
 				<h3>${block.title}</h3>
 				<p class="date">${block.created_at}<p>
 				<p><a href="${block.source.url}">See the original ↗</a></p>
@@ -73,6 +79,8 @@ let renderBlock = (block) => {
 
 			`
 			channelBlocks.insertAdjacentHTML('beforeend', imageItem)
+			// style stuff here
+		
 	}
 
 	// Text!
@@ -164,7 +172,7 @@ let renderBlock = (block) => {
 		}
 	}
 }
-*/
+
 
 
 
