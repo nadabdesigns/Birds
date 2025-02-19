@@ -32,32 +32,36 @@ let placeChannelInfo = (data) => {
 	// channelLink.href = `https://www.are.na/channel/${channelSlug}`
 }
 
-let channelBlocks = document.querySelector('#birds-top-left')
-channelBlocks.addEventListener(image)
+// let channelBlocks = document.querySelector('#birds-top-left')
+
+// channelBlocks.addEventListener(image)
 
 
 
- document.getElementById (birds-top-left)
+//  document.getElementById (birds-top-left)
 
 // Then our big function for specific-block-type rendering:
 let renderBlock = (block) => {
 	// To start, a shared `ul` where we’ll insert all our blocks
-	
+	let channelBlocks = document.querySelector('#all-blocks');
 
-	// console.log("block",block);
+
+	console.log("block", block);
 
 	// Links!
 	if (block.class == 'Link') {
 		// console.log(block)
+		// all pictures that are links
 		let linkItem =
 			`
 			<li class="block block--link">
 				<p><em>Link</em></p>
-				<picture>
+				// giving a class to my grid pictures 
+				<picture class="grid-picture">
 					<source media="(max-width: 428px)" srcset="${block.image.thumb.url}">
 					<source media="(max-width: 640px)" srcset="${block.image.large.url}">
 					<img src="${block.image.original.url}">
-				</picture>s
+				</picture>
 				<h3>${block.title}</h3>
 				<p class="date">${block.created_at}<p>
 				<p><a href="${block.source.url}">See the original ↗</a></p>
@@ -67,6 +71,9 @@ let renderBlock = (block) => {
 	}
 
 	// Images!
+	
+
+
 	// cecking block to see if it's an image
 	else if (block.class == 'Image') {
 		
@@ -75,7 +82,7 @@ let renderBlock = (block) => {
 		
 			`
 			<img src="${block.image.large.url}" alt="${block.title} by ${block.user.full_name}">
-			<figcaption> ${block.title}</figcaption>
+			 <figcaption> ${block.title}</figcaption>
 
 			`
 			channelBlocks.insertAdjacentHTML('beforeend', imageItem)

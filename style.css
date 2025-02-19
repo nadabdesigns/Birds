@@ -9,8 +9,8 @@
 
 /* style grid container*/
 body {
-    background-image:url("Assets/Dots\ Big.png");
-    background-size: 70%;
+    /* background-image:url("Assets/Dots\ Big.png");
+    background-size: 70%; */
     
     }
 .grid-container-div{
@@ -62,6 +62,22 @@ font-weight: 400;
 line-height: normal;
 }
 
+#all-blocks{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+	/* grid-template-rows: repeat(20,1fr); */
+    gap: 20px;
+    padding: 20px;
+
+
+}
+
+.grid-picture{
+    height: 100%;
+
+
+
+}
 
 
 
