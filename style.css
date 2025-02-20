@@ -79,8 +79,20 @@ line-height: normal;
 
 }
 
-
-
+.grid-item {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  figcaption {
+    background-color: white;
+    padding: 8px;
+    font-size: 14px;
+    margin-top: 0;
+    font-family: Inter;
+    font-size: 20px;
+   
+  }
 
 
 

@@ -76,19 +76,36 @@ let renderBlock = (block) => {
 
 	// cecking block to see if it's an image
 	else if (block.class == 'Image') {
+		// when you come across and image let it be a class of it's own (grid item)
+		// we have to add the src ( where is the image being fetched)
 		
-		// create image
-		let imageItem =
+		// sorce is where you would place the url
+		// alt is the alt if the image doesnt display 
+		// if the image has a title it will use block.title and if not it will be Bird image
+		// opinging a caption and closing it with the name
+        let imageItem =
+          `
+          <div class="grid-item">
+            <img src="${block.image.large.url}" alt="${block.title || 'Bird image'}">
+            ${block.title ? `<figcaption>${block.title}</figcaption>` : ''}
+          </div>
+          `
+        channelBlocks.insertAdjacentHTML('beforeend', imageItem)
+      }
+	// else if (block.class == 'Image') {
 		
-			`
-			<img src="${block.image.large.url}" alt="${block.title} by ${block.user.full_name}">
-			 <figcaption> ${block.title}</figcaption>
+	// 	// create image
+	// 	let imageItem =
+		
+	// 		`
+	// 		<img src="${block.image.large.url}" alt="${block.title} by ${block.user.full_name}">
+	// 		 <figcaption> ${block.title}</figcaption>
 
-			`
-			channelBlocks.insertAdjacentHTML('beforeend', imageItem)
-			// style stuff here
+	// 		`
+	// 		channelBlocks.insertAdjacentHTML('beforeend', imageItem)
+	// 		// style stuff here
 		
-	}
+	// }
 
 	// Text!
 
@@ -108,15 +125,17 @@ let renderBlock = (block) => {
 
 	// Uploaded (not linked) media…
 	else if (block.class == 'Attachment') {
+		console.log(block)
 		let attachment = block.attachment.content_type // Save us some repetition
 
 		// Uploaded videos!
 		if (attachment.includes('video')) {
 			// …still up to you, but we’ll give you the `video` element:
+
 			let videoItem =
 				`
 				<li>
-					<p><em>Video</em></p>
+					<p><em>${block.title || block.generated_title}</em></p>
 					<video controls src="${block.attachment.url}"></video>
 				</li>
 				`
@@ -165,7 +184,7 @@ let renderBlock = (block) => {
 			let linkedVideoItem =
 				`
 				<li>
-					<p><em>Linked Video</em></p>
+					<p><em>${block.title || block.generated_title}</em></p>
 					${block.embed.html}
 				</li>
 				`
