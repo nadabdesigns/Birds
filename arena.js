@@ -54,7 +54,7 @@ let renderBlock = (block) => {
 		// all pictures that are links
 		let linkItem =
 			`
-			<li class="block block--link">
+			<li class="grid-item block block--link">
 				<p><em>Link</em></p>
 				// giving a class to my grid pictures 
 				<picture class="grid-picture">
@@ -134,7 +134,8 @@ let renderBlock = (block) => {
 
 			let videoItem =
 				`
-				<li>
+				<li class ='grid-item video-block'>
+
 					<p><em>${block.title || block.generated_title}</em></p>
 					<video controls src="${block.attachment.url}"></video>
 				</li>
@@ -183,7 +184,7 @@ let renderBlock = (block) => {
 			// …still up to you, but here’s an example `iframe` element:
 			let linkedVideoItem =
 				`
-				<li>
+				<li class='grid-item'>
 					<p><em>${block.title || block.generated_title}</em></p>
 					${block.embed.html}
 				</li>

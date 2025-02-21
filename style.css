@@ -80,10 +80,19 @@ line-height: normal;
 }
 
 .grid-item {
+    border: 10px dotted red;
     display: flex;
     flex-direction: column;
+
   }
+  /* targting images that are inside grid items */
+  .grid-item img{
   
+    border: 40px solid aqua;
+
+
+
+  }
   figcaption {
     background-color: white;
     padding: 8px;
@@ -92,6 +101,11 @@ line-height: normal;
     font-family: Inter;
     font-size: 20px;
    
+  }
+  .video-block{
+    border: 10px dotted rgb(25, 169, 66);
+
+
   }
 
 
