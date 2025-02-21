@@ -76,6 +76,7 @@ let renderBlock = (block) => {
 
 	// cecking block to see if it's an image
 	else if (block.class == 'Image') {
+		// went to the learning center the showed me this...
 		// when you come across and image let it be a class of it's own (grid item)
 		// we have to add the src ( where is the image being fetched)
 		
@@ -106,6 +107,20 @@ let renderBlock = (block) => {
 	// 		// style stuff here
 		
 	// }
+	// time to use this on a specific SVG but using a different varable
+		// else if (block.class == 'Image') {
+		
+	// 	// create image
+	// 	let imageItem =
+		
+	// 		`
+	// 		<img src="${block.image.large.url}" alt="${block.title} by ${block.user.full_name}">
+	// 		 <figcaption> ${block.title}</figcaption>
+
+	// 		`
+	// 		channelBlocks.insertAdjacentHTML('beforeend', imageItem)
+	// 		// style stuff here
+
 
 	// Text!
 

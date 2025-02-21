@@ -48,7 +48,23 @@ let renderBlock = (block) => {
 	}
 
 	// Text!
+	// make styling for text 
+	// make a div
 	else if (block.class == 'Text') {
+		`
+			
+				<p><em>Link</em></p>
+				<picture>
+					<source media="(max-width: 428px)" srcset="${block.image.thumb.url}">
+					<source media="(max-width: 640px)" srcset="${block.image.large.url}">
+					<img src="${block.image.original.url}">
+				</picture>
+				<h3>${block.title}</h3>
+				${block.description_html}
+				<p><a href="${block.source.url}">See the original ↗</a></p>
+			
+			`
+
 		// …up to you!
 	}
 
