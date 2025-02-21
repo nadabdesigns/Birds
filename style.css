@@ -107,11 +107,23 @@ line-height: normal;
 
 
   }
-  .block block--text{
+  /* styling for the text block */
+.textblock{
+    background: #FFFDDB;
+    padding: 60px;
+ 
+  
+}
+/* styling for the first chind in the text block */
+.firstText{
+    color: rgb(0, 0, 0); /* Change the color of the first text element inside the div */
+    font-weight: bold;
+    font-family: Inter;
+    font-size: var(--h2);
+
+}
 
 
-    
-  }
 
 
 
@@ -179,4 +191,3 @@ lookes for block text and the a block quote next to it and then targest the p ta
 
     color: red;
 } */
-change

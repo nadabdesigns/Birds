@@ -71,7 +71,7 @@ let renderBlock = (block) => {
 	}
 
 	// Images!
-	
+
 
 
 	// cecking block to see if it's an image
@@ -79,25 +79,25 @@ let renderBlock = (block) => {
 		// went to the learning center the showed me this...
 		// when you come across and image let it be a class of it's own (grid item)
 		// we have to add the src ( where is the image being fetched)
-		
+
 		// sorce is where you would place the url
 		// alt is the alt if the image doesnt display 
 		// if the image has a title it will use block.title and if not it will be Bird image
 		// opinging a caption and closing it with the name
-        let imageItem =
-          `
+		let imageItem =
+			`
           <div class="grid-item">
             <img src="${block.image.large.url}" alt="${block.title || 'Bird image'}">
             ${block.title ? `<figcaption>${block.title}</figcaption>` : ''}
           </div>
           `
-        channelBlocks.insertAdjacentHTML('beforeend', imageItem)
-      }
+		channelBlocks.insertAdjacentHTML('beforeend', imageItem)
+	}
 	// else if (block.class == 'Image') {
-		
+
 	// 	// create image
 	// 	let imageItem =
-		
+
 	// 		`
 	// 		<img src="${block.image.large.url}" alt="${block.title} by ${block.user.full_name}">
 	// 		 <figcaption> ${block.title}</figcaption>
@@ -105,14 +105,14 @@ let renderBlock = (block) => {
 	// 		`
 	// 		channelBlocks.insertAdjacentHTML('beforeend', imageItem)
 	// 		// style stuff here
-		
+
 	// }
 	// time to use this on a specific SVG but using a different varable
-		// else if (block.class == 'Image') {
-		
+	// else if (block.class == 'Image') {
+
 	// 	// create image
 	// 	let imageItem =
-		
+
 	// 		`
 	// 		<img src="${block.image.large.url}" alt="${block.title} by ${block.user.full_name}">
 	// 		 <figcaption> ${block.title}</figcaption>
@@ -128,10 +128,13 @@ let renderBlock = (block) => {
 		console.log(block)
 		console.log("i'm a block")
 		let textItem =
-		`<p class="block block--text">
-		${block.content_html}
+			`
+			<div class="textblock">
+		<p class="firstText">${block.title}</p>
+		<p>${block.content_html}</p>
+		</div>
 		
-		</p>
+	
 		`
 		// inserting text block above html
 		channelBlocks.insertAdjacentHTML('beforeend', textItem)
@@ -162,7 +165,7 @@ let renderBlock = (block) => {
 
 		// Uploaded PDFs!
 		else if (attachment.includes('pdf')) {
-			console.log('pdf',block)
+			console.log('pdf', block)
 			let PDFItem =
 
 				`
@@ -176,7 +179,7 @@ let renderBlock = (block) => {
 		// Uploaded audio!
 		else if (attachment.includes('audio')) {
 			// …still up to you, but here’s an `audio` element:
-			console.log('audio',block)
+			console.log('audio', block)
 			let audioItem =
 				`
 				<li>
@@ -191,7 +194,7 @@ let renderBlock = (block) => {
 
 	// Linked media…
 	else if (block.class == 'Media') {
-		console.log('Media',block)
+		console.log('Media', block)
 		let embed = block.embed.type
 
 		// Linked video!
@@ -224,7 +227,7 @@ let renderBlock = (block) => {
 fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-store' })
 	.then((response) => response.json()) // Return it as JSON data
 	.then((data) => { // Do stuff with the data
-		console.log("data",data) // Always good to check your response!
+		console.log("data", data) // Always good to check your response!
 		placeChannelInfo(data) // Pass the data to the first function
 
 
