@@ -18,7 +18,7 @@ let channelSlug = 'project-4-birds' // The “slug” is just the end of the URL
 // First, let’s lay out some *functions*, starting with our basic metadata:
 let placeChannelInfo = (data) => {
 	// data is everything 
-	console.log('THIS IS DATA', data)
+	// console.log('THIS IS DATA', data)
 	// Target some elements in your HTML:
 	let channelTitle = document.querySelector('#channel-title')
 	let channelDescription = document.querySelector('#channel-description')
@@ -46,7 +46,7 @@ let renderBlock = (block) => {
 	let channelBlocks = document.querySelector('#all-blocks');
 
 
-	console.log("block", block);
+	// console.log("block", block);
 
 	// Links!
 	if (block.class == 'Link') {
@@ -76,9 +76,30 @@ let renderBlock = (block) => {
 
 	// cecking block to see if it's an image
 	else if (block.class == 'Image') {
+		// How to target a specif image...
 		// went to the learning center the showed me this...
 		// when you come across and image let it be a class of it's own (grid item)
 		// we have to add the src ( where is the image being fetched)
+
+		// declaring a varible called dots
+		let dots
+		// for every looped block title we are looking for dots 
+		// if the block title is dots.svg then i'm storing the objects info in the data
+		// if the block title is equal to dots.svg then let dots equal block, block is the blackground
+		if (block.title=='dots.svg'){ 
+
+			dots=block
+			console.log(dots)
+			console.log('im special')
+			// targeting manually the background of the body and making it the specific image
+			document.body.style.backgroundImage = `url(${block.image.large.url})`;
+			// make the image fit within the vewport by containing it to it's natral size vs cover blows it up
+			
+			document.body.style.backgroundSize = 'contain';
+			// step and repeating that image
+			document.body.style.backgroundRepeat = 'repeat';
+
+		}
 
 		// sorce is where you would place the url
 		// alt is the alt if the image doesnt display 
@@ -93,6 +114,7 @@ let renderBlock = (block) => {
           `
 		channelBlocks.insertAdjacentHTML('beforeend', imageItem)
 	}
+
 	// else if (block.class == 'Image') {
 
 	// 	// create image
@@ -125,8 +147,8 @@ let renderBlock = (block) => {
 	// Text!
 
 	else if (block.class == 'Text') {
-		console.log(block)
-		console.log("i'm a block")
+		// console.log(block)
+		// console.log("i'm a block")
 		let textItem =
 			`
 			<div class="textblock">
@@ -143,7 +165,7 @@ let renderBlock = (block) => {
 
 	// Uploaded (not linked) media…
 	else if (block.class == 'Attachment') {
-		console.log(block)
+		// console.log(block)
 		let attachment = block.attachment.content_type // Save us some repetition
 
 		// Uploaded videos!
@@ -165,7 +187,7 @@ let renderBlock = (block) => {
 
 		// Uploaded PDFs!
 		else if (attachment.includes('pdf')) {
-			console.log('pdf', block)
+			// console.log('pdf', block)
 			let PDFItem =
 
 				`
@@ -179,7 +201,7 @@ let renderBlock = (block) => {
 		// Uploaded audio!
 		else if (attachment.includes('audio')) {
 			// …still up to you, but here’s an `audio` element:
-			console.log('audio', block)
+			// console.log('audio', block)
 			let audioItem =
 				`
 				<li>
@@ -194,7 +216,7 @@ let renderBlock = (block) => {
 
 	// Linked media…
 	else if (block.class == 'Media') {
-		console.log('Media', block)
+		// console.log('Media', block)
 		let embed = block.embed.type
 
 		// Linked video!
@@ -227,7 +249,7 @@ let renderBlock = (block) => {
 fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-store' })
 	.then((response) => response.json()) // Return it as JSON data
 	.then((data) => { // Do stuff with the data
-		console.log("data", data) // Always good to check your response!
+		// console.log("data", data) // Always good to check your response!
 		placeChannelInfo(data) // Pass the data to the first function
 
 

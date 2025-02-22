@@ -18,6 +18,7 @@ let placeChannelInfo = (data) => {
 
 
 
+
 // Then our big function for specific-block-type rendering:
 let renderBlock = (block) => {
 	// To start, a shared `ul` where we’ll insert all our blocks
@@ -44,6 +45,20 @@ let renderBlock = (block) => {
 
 	// Images!
 	else if (block.class == 'Image') {
+// let can be changed when ever i want and const will be for forever
+
+
+		let imageItem =
+		
+		
+		`
+
+		${block.image.original.url}
+		
+		
+		
+		
+		`
 		// …up to you!
 	}
 
@@ -68,6 +83,8 @@ let renderBlock = (block) => {
 
 		// …up to you!
 	}
+
+
 
 	// Uploaded (not linked) media…
 	else if (block.class == 'Attachment') {
@@ -152,7 +169,7 @@ let renderUser = (user, container) => { // You can have multiple arguments for a
 fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-store' })
 	.then((response) => response.json()) // Return it as JSON data
 	.then((data) => { // Do stuff with the data
-		console.log(data) // Always good to check your response!
+		// console.log(data) // Always good to check your response!
 		
 		placeChannelInfo(data) // Pass the data to the first function
 
