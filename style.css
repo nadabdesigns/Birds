@@ -5,12 +5,22 @@
     --color-2: rgb(0, 0, 0);
     --h2: 60px;
     --p: 24px;
+
 }
+
+h1 {
+    font-family: Inter;
+    font-size: var(--h2);
+    color: var(--color);
+}
+
+
 
 /* style grid container*/
 body {
-    /* background-image:url("Assets/Dots\ Big.png");
-    background-size: 70%; */
+
+    margin-left: 30px;
+    margin-right: 30px;
 
 }
 
@@ -94,16 +104,14 @@ p {
 }
 
 /* targting images that are inside grid items */
-.grid-item, img, {
+.grid-item img {
 
     border: 40px solid var(--color);
     filter: drop-shadow(30px 10px 4px #4444dd);
-
 }
-.textblock{
 
-    filter: drop-shadow(30px 10px 4px #4444dd);
-}
+
+
 
 
 figcaption {
@@ -116,14 +124,15 @@ figcaption {
 
 }
 
-.VideoBlock, video  {
+.VideoBlock,
+video {
     background: var(--color);
     padding: 60px;
     /* width:100px; */
     height: 100%;
     */ justify-content: center;
     align-items: center;
- 
+
     /* border: 10px dotted rgb(25, 169, 66); */
     /* shrink wrap the outer box to the content */
 
@@ -146,7 +155,8 @@ figcaption {
     height: fit-content;
 
 }
-video{
+
+video {
 
     height: 900px;
 }
@@ -160,6 +170,8 @@ video{
 
     width: 50%;
     height: 100%;
+    filter: drop-shadow(30px 10px 4px #4444dd);
+
 
 
 
