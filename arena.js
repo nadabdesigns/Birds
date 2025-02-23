@@ -215,6 +215,7 @@ let renderBlock = (block) => {
 	}
 
 	// Linked media…
+	
 	else if (block.class == 'Media') {
 		// console.log('Media', block)
 		let embed = block.embed.type
@@ -224,7 +225,7 @@ let renderBlock = (block) => {
 			// …still up to you, but here’s an example `iframe` element:
 			let linkedVideoItem =
 				`
-				<li class='grid-item'>
+				<div class="VideoBlock">
 					<p><em>${block.title || block.generated_title}</em></p>
 					${block.embed.html}
 				</li>
