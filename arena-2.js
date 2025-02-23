@@ -131,7 +131,7 @@ let renderBlock = (block) => {
 	}
 
 	// Linked media…
-	console.log('ahhhhhhh')
+	
 	else if (block.class == 'Media') {
 		
 		let embed = block.embed.type

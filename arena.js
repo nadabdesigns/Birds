@@ -100,7 +100,6 @@ let renderBlock = (block) => {
 			document.body.style.backgroundRepeat = 'repeat';
 
 		}
-
 		// sorce is where you would place the url
 		// alt is the alt if the image doesnt display 
 		// if the image has a title it will use block.title and if not it will be Bird image
@@ -108,8 +107,9 @@ let renderBlock = (block) => {
 		let imageItem =
 			`
           <div class="grid-item">
-            <img src="${block.image.large.url}" alt="${block.title || 'Bird image'}">
-            ${block.title ? `<figcaption>${block.title}</figcaption>` : ''}
+            <img src="${block.image.large.url}
+			" alt="${block.title || 'Bird image'}">
+           ${block.title ? `<figcaption>${block.title}</figcaption>` : ''} 
           </div>
           `
 		channelBlocks.insertAdjacentHTML('beforeend', imageItem)
@@ -169,12 +169,13 @@ let renderBlock = (block) => {
 		let attachment = block.attachment.content_type // Save us some repetition
 
 		// Uploaded videos!
+		console.log('im special')
 		if (attachment.includes('video')) {
 			// …still up to you, but we’ll give you the `video` element:
 
 			let videoItem =
 				`
-				<li class ='grid-item video-block'>
+				<div class='UploadedVideoBlock'>
 
 					<p><em>${block.title || block.generated_title}</em></p>
 					<video controls src="${block.attachment.url}"></video>

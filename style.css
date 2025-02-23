@@ -1,32 +1,35 @@
-
 /* varibles */
 :root {
-    --color: rgb(255, 255, 255); /* set default value for "color" variable */
+    --color: rgb(255, 255, 255);
+    /* set default value for "color" variable */
     --color-2: rgb(0, 0, 0);
     --h2: 60px;
     --p: 24px;
-  }
+}
 
 /* style grid container*/
 body {
     /* background-image:url("Assets/Dots\ Big.png");
     background-size: 70%; */
-    
-    }
-.grid-container-div{
+
+}
+
+.grid-container-div {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-	/* grid-template-rows: repeat(20,1fr); */
+    /* grid-template-rows: repeat(20,1fr); */
     gap: 20px;
     padding: 20px;
 }
-.box-medium{
-width: 100%;
- height: 100%;
- background-color: pink;
+
+.box-medium {
+    width: 100%;
+    height: 100%;
+    background-color: pink;
 
 }
-.card{
+
+.card {
     /* auto will only fill the space that you give it */
     width: auto;
     height: auto;
@@ -34,45 +37,49 @@ width: 100%;
     padding: 20px;
 
 }
-img{
+
+img {
     display: block;
-	width: 66%;
+    width: 66%;
     left: 2rem;
 }
-.img-top{
+
+.img-top {
     position: relative;
     z-index: 1;
 }
-h2{
-color: #000;
 
-font-family: "ITC Avant Garde Gothic Pro";
-font-size: var(--h2);
-font-style: normal;
-font-weight: 500;
-line-height: normal;
-
-}
-p{
+h2 {
     color: #000;
-font-family: Inter;
-font-size: var(--p);
-font-style: normal;
-font-weight: 400;
-line-height: normal;
+
+    font-family: "ITC Avant Garde Gothic Pro";
+    font-size: var(--h2);
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+
 }
 
-#all-blocks{
+p {
+    color: #000;
+    font-family: Inter;
+    font-size: var(--p);
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+#all-blocks {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-	/* grid-template-rows: repeat(20,1fr); */
+    /* grid-template-rows: repeat(20,1fr); */
     gap: 20px;
     padding: 20px;
 
 
 }
 
-.grid-picture{
+.grid-picture {
     height: 100%;
 
 
@@ -84,49 +91,81 @@ line-height: normal;
     display: flex;
     flex-direction: column;
 
-  }
-  /* targting images that are inside grid items */
-  .grid-item img{
-  
+}
+
+/* targting images that are inside grid items */
+.grid-item, img, {
+
     border: 40px solid var(--color);
+    filter: drop-shadow(30px 10px 4px #4444dd);
+
+}
+.textblock{
+
+    filter: drop-shadow(30px 10px 4px #4444dd);
+}
 
 
-
-  }
-  figcaption {
+figcaption {
     background-color: white;
     padding: 8px;
     font-size: 14px;
     margin-top: 0;
     font-family: Inter;
     font-size: 20px;
-   
-  }
-  .VideoBlock{
+
+}
+
+.VideoBlock, video  {
     background: var(--color);
     padding: 60px;
-    width: 100%;
+    /* width:100px; */
     height: 100%;
+    */ justify-content: center;
+    align-items: center;
+ 
+    /* border: 10px dotted rgb(25, 169, 66); */
+    /* shrink wrap the outer box to the content */
+
+
+
+}
+
+
+.UploadedVideoBlock {
+
+
+    padding-bottom: 56.25%;
+    /* 16:9 aspect ratio */
+
+    overflow: hidden;
     justify-content: center;
     align-items: center;
     border: 10px dotted rgb(25, 169, 66);
+    width: fit-content;
+    height: fit-content;
 
+}
+video{
 
-  }
-  /* styling for the text block */
-.textblock{
+    height: 900px;
+}
+
+/* styling for the text block */
+.textblock {
     background: var(--color);
     padding: 60px;
     /* position: absolute;
     justify-self: start; */
-   
-     width: 50%;
-        height: 100%;
-     
-     
-  
+
+    width: 50%;
+    height: 100%;
+
+
+
 }
-.offset{
+
+.offset {
     transform: rotate(-45deg);
     font-size: 35rem;
     line-height: normal;
@@ -137,11 +176,13 @@ line-height: normal;
     text-overflow: inherit;
     color: var(--black--);
     transform: translate(-50% -50%);
-    
+
 }
+
 /* styling for the first chind in the text block */
-.firstText{
-    color: rgb(0, 0, 0); /* Change the color of the first text element inside the div */
+.firstText {
+    color: rgb(0, 0, 0);
+    /* Change the color of the first text element inside the div */
     font-weight: bold;
     font-family: Inter;
     font-size: var(--h2);
