@@ -7,6 +7,9 @@
     --p: 24px;
 
 }
+html{
+    width: 150%;
+}
 #bigNav{
     background: var(--color);
     padding: 60px;
