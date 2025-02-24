@@ -7,11 +7,21 @@
     --p: 24px;
 
 }
+#bigNav{
+    background: var(--color);
+    padding: 60px;
+    width: 100%;
+    height: 100%;
+    filter: drop-shadow(30px 10px 4px #4444dd);
+    height: fit-content;
+    margin-bottom: 40px;
+}
+
 
 h1 {
     font-family: Inter;
     font-size: var(--h2);
-    color: var(--color);
+  
 }
 
 
@@ -21,6 +31,7 @@ body {
 
     margin-left: 30px;
     margin-right: 30px;
+    padding: 20px;
 
 }
 
@@ -30,6 +41,7 @@ body {
     /* grid-template-rows: repeat(20,1fr); */
     gap: 20px;
     padding: 20px;
+    position: fixed;
 }
 
 .box-medium {
@@ -84,10 +96,9 @@ p {
     grid-template-columns: repeat(2, 1fr);
     /* grid-template-rows: repeat(20,1fr); */
     gap: 20px;
-    padding: 20px;
-
 
 }
+
 
 .grid-picture {
     height: 100%;
@@ -109,9 +120,6 @@ p {
     border: 40px solid var(--color);
     filter: drop-shadow(30px 10px 4px #4444dd);
 }
-
-
-
 
 
 figcaption {
@@ -160,6 +168,10 @@ video {
 
     height: 900px;
 }
+/* for embeaded videos */
+iframe{
+    height: 20vh;
+    }
 
 /* styling for the text block */
 .textblock {
@@ -168,9 +180,10 @@ video {
     /* position: absolute;
     justify-self: start; */
 
-    width: 50%;
+    width: 100%;
     height: 100%;
     filter: drop-shadow(30px 10px 4px #4444dd);
+    height: fit-content
 
 
 
@@ -198,6 +211,7 @@ video {
     font-weight: bold;
     font-family: Inter;
     font-size: var(--h2);
+        padding-bottom: 40px;
 
 }
 
@@ -269,3 +283,31 @@ lookes for block text and the a block quote next to it and then targest the p ta
 
     color: red;
 } */
+
+/* MEDIA QUERIES */
+
+/* ALL RULES THAT APPLY WHEN SCREEN IS SMALLER THAN 1050 PX */
+@media screen and (max-width: 1050px) {
+
+}
+
+/* WHEN SCREEN IS SMALLER THAN 600 PX */
+@media screen and (max-width: 600px) {
+   
+}
+
+/* SCREEN IS SMALLER THAN 530 PX */
+@media screen and (max-width: 530px) {
+    
+}
+
+/* SCREEN IS SMALLER THATN 400 PX */
+
+@media screen and (max-width: 400px) {
+  
+}
+
+/* WHEN SCREEN IS SMALLER THAN 350 PX */
+@media screen and (max-width: 350px) {
+
+}
