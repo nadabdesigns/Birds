@@ -140,7 +140,7 @@ video {
  justify-content: center;
     align-items: center;
     width: 100%;
-    aspect-ratio: 1/1;
+    /* aspect-ratio: 1/1; */
 
     /* border: 10px dotted rgb(25, 169, 66); */
     /* shrink wrap the outer box to the content */
@@ -152,8 +152,8 @@ video {
 
 .UploadedVideoBlock {
 
-
-    padding-bottom: 56.25%;
+/* 
+    padding-bottom: 56.25%; */
     /* 16:9 aspect ratio */
 
     overflow: hidden;
