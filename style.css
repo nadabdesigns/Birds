@@ -158,6 +158,7 @@ video {
 
 
 .UploadedVideoBlock {
+    /* border: 40px solid var(--color); */
 
 /* 
     padding-bottom: 56.25%; */
@@ -173,14 +174,14 @@ video {
 }
 
 video {
-    border: 40px solid
-    height: 900px;
+    background-color: var(--color);
+    padding: 40px;
 }
 /* for embeaded videos */
 /* got this from https://developer.mozilla.org/en-US/docs/Web/CSS/aspect-ratio */
 /* i wanted to calcualte the with from the hight  */
 iframe{
-    height: 20vh;
+    /* height: 20vh; */
     aspect-ratio: 16 / 9;
     border: 40px solid var(--color);
     -webkit-text-stroke: 40px;
