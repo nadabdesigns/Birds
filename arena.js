@@ -62,11 +62,13 @@ let renderBlock = (block) => {
 					<source media="(max-width: 640px)" srcset="${block.image.large.url}">
 					<img src="${block.image.original.url}">
 				</picture>
-				<h3>${block.title}</h3>
+			
 				<p class="date">${block.created_at}<p>
 				<p><a href="${block.source.url}">See the original ↗</a></p>
 			</li>
+			
 			`
+			// <h3>${block.title}</h3>
 		channelBlocks.insertAdjacentHTML('beforeend', linkItem)
 	}
 
@@ -86,15 +88,15 @@ let renderBlock = (block) => {
 		// for every looped block title we are looking for dots 
 		// if the block title is dots.svg then i'm storing the objects info in the data
 		// if the block title is equal to dots.svg then let dots equal block, block is the blackground
-		if (block.title=='dots.svg'){ 
+		if (block.title == 'dots.svg') {
 
-			dots=block
+			dots = block
 			console.log(dots)
 			console.log('im special')
 			// targeting manually the background of the body and making it the specific image
 			document.body.style.backgroundImage = `url(${block.image.large.url})`;
 			// make the image fit within the vewport by containing it to it's natral size vs cover blows it up
-			
+
 			document.body.style.backgroundSize = 'contain';
 			// step and repeating that image
 			document.body.style.backgroundRepeat = 'repeat';
@@ -161,6 +163,16 @@ let renderBlock = (block) => {
 		// inserting text block above html
 		channelBlocks.insertAdjacentHTML('beforeend', textItem)
 		// …up to you!
+		// got his from MDN it's for a clicking action so i can get my pop up menues
+
+		channelBlocks.addEventListener("click", (event) => {
+			console.log('heehehhehe')
+
+
+		});
+
+		onclick = (event) => { };
+
 	}
 
 	// Uploaded (not linked) media…
@@ -177,10 +189,11 @@ let renderBlock = (block) => {
 				`
 				<div class='UploadedVideoBlock'>
 
-					<p><em>${block.title || block.generated_title}</em></p>
+					
 					<video controls src="${block.attachment.url}"></video>
 				</li>
 				`
+			// <p><em>${block.title || block.generated_title}</em></p>
 			channelBlocks.insertAdjacentHTML('beforeend', videoItem)
 			// More on video, like the `autoplay` attribute:
 			// https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video
@@ -216,7 +229,7 @@ let renderBlock = (block) => {
 	}
 
 	// Linked media…
-	
+
 	else if (block.class == 'Media') {
 		// console.log('Media', block)
 		let embed = block.embed.type
@@ -236,7 +249,7 @@ let renderBlock = (block) => {
 			channelBlocks.insertAdjacentHTML('beforeend', linkedVideoItem)
 			// More on iframe: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe
 		}
-	
+
 
 		// Linked audio!
 		else if (embed.includes('rich')) {
