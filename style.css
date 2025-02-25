@@ -110,7 +110,7 @@ p {
 }
 
 .grid-item {
-    border: 10px dotted red;
+    /* border: 10px dotted red; */
     display: flex;
     flex-direction: column;
 
@@ -120,7 +120,7 @@ p {
 .grid-item img {
 
     border: 40px solid var(--color);
-    filter: drop-shadow(30px 10px 4px #4444dd);
+    /* filter: drop-shadow(30px 10px 4px #4444dd); */
 }
 
 
@@ -162,7 +162,7 @@ video {
     overflow: hidden;
     justify-content: center;
     align-items: center;
-    border: 10px dotted rgb(25, 169, 66);
+    /* border: 10px dotted rgb(25, 169, 66); */
     width: fit-content;
     height: fit-content;
 
@@ -178,6 +178,8 @@ video {
 iframe{
     height: 20vh;
     aspect-ratio: 16 / 9;
+    border: 40px solid var(--color);
+    -webkit-text-stroke: 40px;
   
     }
 
@@ -190,7 +192,7 @@ iframe{
 
     width: 100%;
     height: 100%;
-    filter: drop-shadow(30px 10px 4px #4444dd);
+    /* filter: drop-shadow(30px 10px 4px #4444dd); */
     height: fit-content
 
 
@@ -306,6 +308,13 @@ lookes for block text and the a block quote next to it and then targest the p ta
 
 /* SCREEN IS SMALLER THAN 530 PX */
 @media screen and (max-width: 530px) {
+    #all-blocks {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        /* grid-template-rows: repeat(20,1fr); */
+        gap: 20px;
+    
+    }
     
 }
 
@@ -313,9 +322,24 @@ lookes for block text and the a block quote next to it and then targest the p ta
 
 @media screen and (max-width: 400px) {
   
+    #all-blocks {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        /* grid-template-rows: repeat(20,1fr); */
+        gap: 20px;
+    
+    }
 }
 
 /* WHEN SCREEN IS SMALLER THAN 350 PX */
 @media screen and (max-width: 350px) {
+
+    #all-blocks {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        /* grid-template-rows: repeat(20,1fr); */
+        gap: 20px;
+    
+    }
 
 }
