@@ -8,7 +8,7 @@
 
 }
 html{
-    width: 150%;
+    /* width: 150%; */
 }
 #bigNav{
     background: var(--color);
@@ -169,7 +169,7 @@ video {
 }
 
 video {
-
+    border: 40px solid
     height: 900px;
 }
 /* for embeaded videos */
@@ -178,6 +178,7 @@ video {
 iframe{
     height: 20vh;
     aspect-ratio: 16 / 9;
+  
     }
 
 /* styling for the text block */
