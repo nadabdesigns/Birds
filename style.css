@@ -21,8 +21,11 @@ html{
 
 
 h1 {
+    color: rgb(0, 0, 0);
+    font-weight: bold;
     font-family: Inter;
     font-size: var(--h2);
+    padding-bottom: 40px;
   
 }
 
@@ -131,12 +134,13 @@ figcaption {
     margin-top: 0;
     font-family: Inter;
     font-size: 20px;
+    width: 66%;
 
 }
 
 .VideoBlock,
 video {
-    background: var(--color);
+    /* background: var(--color); */
     padding: 60px;
     /* width:100px; */
     height: 100%;
