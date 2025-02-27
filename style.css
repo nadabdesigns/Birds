@@ -3,7 +3,7 @@
 	--h1: 80px;
 	--p: 20px;
 	--Black: rgb(0, 0, 0);
-	--yellow:#FFFF00;
+	--yellow: #FFFF00;
 
 
 
@@ -12,14 +12,15 @@
 }
 
 .birdsSection {
-color: #000;
-font-family: Shader;
-font-size: 80px;
-font-style: normal;
-font-weight: 700;
-line-height: normal;
-text-transform: uppercase;
+	color: #000;
+	font-family: Shader;
+	font-size: 80px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: normal;
+	text-transform: uppercase;
 }
+
 /* MEDIA QUERIES */
 
 /* ALL RULES THAT APPLY WHEN SCREEN IS SMALLER THAN 1050 PX */
@@ -28,13 +29,14 @@ text-transform: uppercase;
 /* WHEN SCREEN IS SMALLER THAN 600 PX */
 @media screen and (max-width: 600px) {
 
-	.sideNav{
-		height:80px;
+	.sideNav {
+		height: 80px;
 		background-color: aqua;
 	}
+
 	.birdsSection {
 
-/* placing birds where we want */
+		/* placing birds where we want */
 		display: flex;
 		flex: 3;
 		justify-content: center;
@@ -64,16 +66,46 @@ text-transform: uppercase;
 		text-transform: uppercase;
 
 	}
-	.sunSection{
+
+	.sunDiv {
+		width: 100vw;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+
+	}
+
+	#bigSun {
 		background-color: rgb(0, 132, 255);
-		height: 50vh;
+		height: 30vh;
+		width: 30vh;
+		border-radius: 200px;
+
+		/* center it within the div */
+		/* position: relative;
+	left: 20vw; */
+
+	}
+
+	nav {
+		background-color: #000;
+		color: azure;
+		width: 60%;
+		/*  each element is spaced evenly*/
+		display: flex;
+		justify-content: space-between;
+		padding: 0px 8px 0px 8px;
+
 
 
 	}
 
-	.textSection{
+
+	.textSection {
 		background-color: rgb(35, 6, 181);
-		height: 30vh;
+		/* need to make a height so that we can scroll */
+		height: 50vh;
+		overflow: scroll;
 
 
 
