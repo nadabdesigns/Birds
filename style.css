@@ -4,22 +4,83 @@
 	--p: 20px;
 	--Black: rgb(0, 0, 0);
 	--yellow: #FFFF00;
-
-
-
-
-
+	--padding: 30px;
 }
 
-.birdsSection {
+
+
+
+
+/* NORMAL */
+/* LEFT TO RIGHT FOR WEB */
+*/ .firstDiv {
+	display: flex;
+	flex-wrap: nowrap;
+	flex-direction: row;
+}
+
+.webNav {
+	height: 80px;
+	width: 100px;
+	background-color: aqua;
 	color: #000;
+}
+
+
+.birdsSection {
+	color: var(--Black);
 	font-family: Shader;
 	font-size: 80px;
 	font-style: normal;
 	font-weight: 700;
 	line-height: normal;
 	text-transform: uppercase;
+
+	/* make it over the sun section */
+	position: relative;
+    top: var(--padding); 
+    left: 20px;
+
 }
+
+.sunDiv {
+	width: 100vw;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+
+}
+
+#bigSun {
+	background-color: var(--yellow);
+	height: 30vh;
+	width: 30vh;
+	border-radius: 300px;
+
+	/* center it within the div */
+	/* position: relative;
+left: 20vw; */
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* MEDIA QUERIES */
 
@@ -28,6 +89,29 @@
 
 /* WHEN SCREEN IS SMALLER THAN 600 PX */
 @media screen and (max-width: 600px) {
+
+	/* FLEX UP AND DOWN FOR MOBILE */
+	/* for fonts */
+	p {
+		padding: 30px;
+
+
+		font-family: "Space Grotesk";
+		font-size: 15px;
+		font-style: normal;
+		font-weight: 700;
+		line-height: normal;
+		text-transform: uppercase;
+
+	}
+
+	body {
+		display: flex;
+		flex-wrap: nowrap;
+		flex-direction: column;
+	}
+
+
 
 	.sideNav {
 		height: 80px;
@@ -49,9 +133,10 @@
 		font-family: "shader", sans-serif;
 		font-weight: 700;
 		font-size: 30px;
-		color: rgb(207, 196, 255);
+		color: var(--Black);
 	}
 
+	/* display flex all birds */
 	.birds1 .birds2 .birds3 {
 		display: flex;
 		justify-content: center;
@@ -67,6 +152,13 @@
 
 	}
 
+	/* ofset that one bird */
+	.birds2{
+		padding-left: 30px;
+		position:relative;
+		padding-left: 30px;
+	}
+
 	.sunDiv {
 		width: 100vw;
 		display: flex;
@@ -76,7 +168,7 @@
 	}
 
 	#bigSun {
-		background-color: rgb(0, 132, 255);
+		background-color: var(--yellow);
 		height: 30vh;
 		width: 30vh;
 		border-radius: 200px;
@@ -95,14 +187,14 @@
 		display: flex;
 		justify-content: space-between;
 		padding: 0px 8px 0px 8px;
+		flex-direction: row;
 
 
 
 	}
 
-
 	.textSection {
-		background-color: rgb(35, 6, 181);
+
 		/* need to make a height so that we can scroll */
 		height: 50vh;
 		overflow: scroll;
@@ -110,10 +202,14 @@
 
 
 	}
-
-
-
 }
+
+
+
+
+
+
+
 
 /* SCREEN IS SMALLER THAN 530 PX */
 @media screen and (max-width: 530px) {}
