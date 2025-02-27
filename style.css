@@ -1,6 +1,6 @@
 :root {
 
-	--h1: 80px;
+	--h1: 100px;
 	--p: 20px;
 	--Black: rgb(0, 0, 0);
 	--yellow: #FFFF00;
@@ -13,7 +13,7 @@
 
 /* NORMAL */
 /* LEFT TO RIGHT FOR WEB */
-*/ .firstDiv {
+ .firstDiv {
 	display: flex;
 	flex-wrap: nowrap;
 	flex-direction: row;
@@ -30,16 +30,17 @@
 .birdsSection {
 	color: var(--Black);
 	font-family: Shader;
-	font-size: 80px;
+	font-size: var(--h1);
 	font-style: normal;
 	font-weight: 700;
 	line-height: normal;
 	text-transform: uppercase;
 
 	/* make it over the sun section */
-	position: relative;
-    top: var(--padding); 
-    left: 20px;
+	/* position: relative; */
+	
+	top: var(--padding);
+	left: 20px;
 
 }
 
@@ -48,14 +49,22 @@
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
+	
 
 }
 
 #bigSun {
+	display: flex;
+    justify-content: center; 
 	background-color: var(--yellow);
-	height: 30vh;
-	width: 30vh;
+	height: 40vh;
+	width: 40vh;
 	border-radius: 300px;
+	position: absolute;
+	z-index: -1;
+
+
+
 
 	/* center it within the div */
 	/* position: relative;
@@ -132,7 +141,8 @@ left: 20vw; */
 		/* font changes */
 		font-family: "shader", sans-serif;
 		font-weight: 700;
-		font-size: 30px;
+		font-size: 60px;
+		
 		color: var(--Black);
 	}
 
@@ -144,39 +154,68 @@ left: 20vw; */
 		color: var(--Black);
 
 		font-family: Shader;
-		font-size: 80px;
+		
 		font-style: normal;
 		font-weight: 700;
 		line-height: normal;
 		text-transform: uppercase;
+		
 
 	}
 
 	/* ofset that one bird */
-	.birds2{
+	.birds2 {
 		padding-left: 30px;
-		position:relative;
+		position: relative;
 		padding-left: 30px;
 	}
 
 	.sunDiv {
 		width: 100vw;
 		display: flex;
-		flex-direction: row;
+		flex-direction: column;
 		justify-content: center;
 
 	}
 
 	#bigSun {
 		background-color: var(--yellow);
-		height: 30vh;
-		width: 30vh;
+		height: 40vh;
+		width: 40vh;
 		border-radius: 200px;
 
 		/* center it within the div */
 		/* position: relative;
 	left: 20vw; */
 
+	}
+
+
+	.flockDetails {
+		display: flex;
+		flex-direction: row;
+		height: 200px;
+
+	}
+
+	#notFlockDiv {
+
+		width: 100%;
+		height: 100%;
+		/* background-color: aqua; */
+
+	}
+
+	#flockDiv {
+
+		width: 100%;
+		height: 100%;
+		/* background-color: #FFFF00; */
+		padding-top: 40px;
+
+	}
+	#BirdImage{
+		width: 60%;
 	}
 
 	nav {
@@ -186,7 +225,7 @@ left: 20vw; */
 		/*  each element is spaced evenly*/
 		display: flex;
 		justify-content: space-between;
-		padding: 0px 8px 0px 8px;
+		padding: 0px 20px 0px 20px;
 		flex-direction: row;
 
 
