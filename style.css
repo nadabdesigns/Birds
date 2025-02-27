@@ -237,7 +237,7 @@ left: 20vw; */
 	nav {
 		background-color: #000;
 		color: azure;
-		width: 60%;
+		width: 70%;
 		/*  each element is spaced evenly*/
 		display: flex;
 		justify-content: space-between;
@@ -253,21 +253,22 @@ left: 20vw; */
 		text-transform: uppercase;
 		
 	}
+	.textSection {
+
+		/* need to make a height so that we can scroll */
+		height: 50vh;
+		overflow: scroll;
+	
+	
+	
+	}
 
 
 
 }
 
-.textSection {
-
-	/* need to make a height so that we can scroll */
-	height: 50vh;
-	overflow: scroll;
 
 
-
-}
-}
 
 
 
@@ -277,7 +278,14 @@ left: 20vw; */
 
 
 /* SCREEN IS SMALLER THAN 530 PX */
-@media screen and (max-width: 530px) {}
+@media screen and (max-width: 530px) {
+	nav {
+		
+		width: 80%;
+	
+		
+	}
+}
 
 /* SCREEN IS SMALLER THATN 400 PX */
 
