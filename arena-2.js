@@ -2,6 +2,8 @@
 
 // First, let’s lay out some *functions*, starting with our basic metadata:
 
+let channelSlug = 'project-4-birds';
+
 let placeChannelInfo = (data) => {
 	// Target some elements in your HTML:
 	let channelTitle = document.querySelector('#channel-title')
@@ -42,6 +44,8 @@ let renderBlock = (block) => {
 			`
 		channelBlocks.insertAdjacentHTML('beforeend', linkItem)
 	}
+
+	
 
 	// Images!
 	else if (block.class == 'Image') {
@@ -169,7 +173,7 @@ let renderUser = (user, container) => { // You can have multiple arguments for a
 fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-store' })
 	.then((response) => response.json()) // Return it as JSON data
 	.then((data) => { // Do stuff with the data
-		// console.log(data) // Always good to check your response!
+		console.log(data) // Always good to check your response!
 		
 		placeChannelInfo(data) // Pass the data to the first function
 
@@ -178,7 +182,7 @@ fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-stor
 			// console.log(block) // The data for a single block
 			renderBlock(block) // Pass the single block data to the render function
 		})
-
+// lets you stor things in the name 
 		// Also display the owner and collaborators:
 		let channelUsers = document.querySelector('#channel-users') // Show them together
 		data.collaborators.forEach((collaborator) => renderUser(collaborator, channelUsers))

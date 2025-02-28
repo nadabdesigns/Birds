@@ -11,12 +11,78 @@
 
 
 
+
+
 /* NORMAL */
-/* LEFT TO RIGHT FOR WEB */
+LEFT TO RIGHT FOR WEB
+/* p {
+	padding: 30px;
+
+
+	font-family: "Space Grotesk";
+	font-size: 15px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: normal;
+	text-transform: uppercase;
+	
+
+} */
+
+body {
+	display: flex;
+	flex-direction: column;
+}
+.flexDiv{
+display: flex;
+flex-direction: row;
+}
+
+.webNav {
+	height: 80px;
+	width: 100px;
+	background-color: aqua;
+	color: #000;
+	/*  each element is spaced evenly*/
+	display: flex;
+	justify-content: space-between;
+	padding: 0px 20px 0px 20px;
+	flex-direction: column;
+	/* border-radius: 200px; */
+	font-family: Shader;
+	font-size: 8px;
+	font-style: normal;
+	font-weight: 600;
+	line-height: 180%;
+	*/
+	/* 15.977px */
+	text-transform: uppercase;
+}
+
+
 .firstDiv {
 	display: flex;
 	flex-wrap: nowrap;
 	flex-direction: row;
+}
+
+.birdsSection {
+
+	/* placing birds where we want */
+	display: flex;
+	flex: 3;
+	justify-content: center;
+	height: 70%;
+	background-color: var(--red--);
+	z-index: 0;
+	flex-direction: column;
+	position: relative;
+	/* font changes */
+	font-family: "shader", sans-serif;
+	font-weight: 700;
+	font-size: 60px;
+	text-transform: uppercase;
+	color: var(--Black);
 }
 
 .webNav {
@@ -27,22 +93,7 @@
 }
 
 
-.birdsSection {
-	color: var(--Black);
-	font-family: Shader;
-	font-size: var(--h1);
-	font-style: normal;
-	font-weight: 700;
-	line-height: normal;
-	text-transform: uppercase;
-
-	/* make it over the sun section */
-	/* position: relative; */
-
-	top: var(--padding);
-	left: 20px;
-
-}
+/*  */
 
 .centerSun {
 	display: flex;
@@ -66,18 +117,83 @@
 	background-color: var(--yellow);
 	height: 40vh;
 	width: 40vh;
-	border-radius: 300px;
+	border-radius: 800px;
 	position: absolute;
 	z-index: -1;
+}
+.flockDetails {
+	display: flex;
+	flex-direction: row;
+	height: 200px;
+
+}
+
+#notFlockDiv {
+
+	width: 100%;
+	height: 100%;
+	/* background-color: aqua; */
+
+}
+
+#flockDiv {
+
+	width: 100%;
+	height: 100%;
+	/* background-color: #FFFF00; */
+	padding-top: 80px;
+
+}
+
+#BirdImage {
+	width: 60%;
+}
+
+.navContainer {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	padding-top: 60px;
+	padding-bottom: 30px;
+}
+
+nav {
+	background-color: #000;
+	color: azure;
+	width: 70%;
+	/*  each element is spaced evenly*/
+	display: flex;
+	justify-content: space-between;
+	padding: 0px 20px 0px 20px;
+	flex-direction: row;
+	/* border-radius: 200px; */
+	font-family: Shader;
+	font-size: 8px;
+	font-style: normal;
+	font-weight: 600;
+	line-height: 180%;
+	/* 15.977px */
+	text-transform: uppercase;
+
+}
+
+.textSection {
+
+	/* need to make a height so that we can scroll */
+	height: 50vh;
+	overflow: scroll;
 
 
+
+}
 
 
 	/* center it within the div */
 	/* position: relative;
-left: 20vw; */
+left: 20vw;
 
-}
+
+
 
 
 
@@ -100,196 +216,207 @@ left: 20vw; */
 
 /* MEDIA QUERIES */
 
-/* ALL RULES THAT APPLY WHEN SCREEN IS SMALLER THAN 1050 PX */
-@media screen and (max-width: 1050px) {}
+	/* ALL RULES THAT APPLY WHEN SCREEN IS SMALLER THAN 1050 PX */
+	@media screen and (max-width: 1050px) {}
 
-/* WHEN SCREEN IS SMALLER THAN 600 PX */
-@media screen and (max-width: 600px) {
+	/* WHEN SCREEN IS SMALLER THAN 600 PX */
+	@media screen and (max-width: 600px) {
 
-	/* FLEX UP AND DOWN FOR MOBILE */
-	/* for fonts */
-	p {
-		padding: 30px;
+		/* FLEX UP AND DOWN FOR MOBILE */
+		/* for fonts */
+		/* DISPLAY NONE */
+		.flexDiv{
+			display: flex;
+			flex-direction: column;
+			}
+		.webNav {
 
+			display: none;
+		}
 
-		font-family: "Space Grotesk";
-		font-size: 15px;
-		font-style: normal;
-		font-weight: 700;
-		line-height: normal;
-		text-transform: uppercase;
-
-	}
-
-	body {
-		display: flex;
-		flex-wrap: nowrap;
-		flex-direction: column;
-	}
+		p {
+			padding: 30px;
 
 
+			font-family: "Space Grotesk";
+			font-size: 15px;
+			font-style: normal;
+			font-weight: 700;
+			line-height: normal;
+			text-transform: uppercase;
 
-	.sideNav {
+		}
+
+		body {
+			display: flex;
+			flex-wrap: nowrap;
+			flex-direction: column;
+		}
+
+
+
+		/* .sideNav {
 		height: 80px;
 		background-color: aqua;
-	}
+	} */
 
-	.birdsSection {
+		.birdsSection {
 
-		/* placing birds where we want */
-		display: flex;
-		flex: 3;
-		justify-content: center;
-		height: 70%;
-		background-color: var(--red--);
-		z-index: 0;
-		flex-direction: column;
-		position: relative;
-		/* font changes */
-		font-family: "shader", sans-serif;
-		font-weight: 700;
-		font-size: 60px;
+			/* placing birds where we want */
+			display: flex;
+			flex: 3;
+			justify-content: center;
+			height: 70%;
+			background-color: var(--red--);
+			z-index: 0;
+			flex-direction: column;
+			position: relative;
+			/* font changes */
+			font-family: "shader", sans-serif;
+			font-weight: 700;
+			font-size: 60px;
 
-		color: var(--Black);
-	}
+			color: var(--Black);
+		}
 
-	/* display flex all birds */
-	.birds1 .birds2 .birds3 {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		color: var(--Black);
+		/* display flex all birds */
+		.birds1 .birds2 .birds3 {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			color: var(--Black);
 
-		font-family: Shader;
+			font-family: Shader;
 
-		font-style: normal;
-		font-weight: 700;
-		line-height: normal;
-		text-transform: uppercase;
+			font-style: normal;
+			font-weight: 700;
+			line-height: normal;
+			text-transform: uppercase;
 
 
-	}
+		}
 
-	/* ofset that one bird */
-	.birds2 {
-		padding-left: 30px;
-		position: relative;
-		padding-left: 30px;
-	}
+		/* ofset that one bird */
+		.birds2 {
+			padding-left: 30px;
+			position: relative;
+			padding-left: 30px;
+		}
 
-	.sunDiv {
-		width: 100vw;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
+		.sunDiv {
+			width: 100vw;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
 
-	}
+		}
 
-	#bigSun {
-		background-color: var(--yellow);
-		height: 40vh;
-		width: 40vh;
-		border-radius: 200px;
+		#bigSun {
+			background-color: var(--yellow);
+			height: 40vh;
+			width: 40vh;
+			border-radius: 200px;
 
-		/* center it within the div */
-		/* position: relative;
+			/* center it within the div */
+			/* position: relative;
 	left: 20vw; */
 
+		}
+
+
+		.flockDetails {
+			display: flex;
+			flex-direction: row;
+			height: 200px;
+
+		}
+
+		#notFlockDiv {
+
+			width: 100%;
+			height: 100%;
+			/* background-color: aqua; */
+
+		}
+
+		#flockDiv {
+
+			width: 100%;
+			height: 100%;
+			/* background-color: #FFFF00; */
+			padding-top: 80px;
+
+		}
+
+		#BirdImage {
+			width: 60%;
+		}
+
+		.navContainer {
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			padding-top: 60px;
+			padding-bottom: 30px;
+		}
+
+		nav {
+			background-color: #000;
+			color: azure;
+			width: 70%;
+			/*  each element is spaced evenly*/
+			display: flex;
+			justify-content: space-between;
+			padding: 0px 20px 0px 20px;
+			flex-direction: row;
+			border-radius: 200px;
+			font-family: Shader;
+			font-size: 8px;
+			font-style: normal;
+			font-weight: 600;
+			line-height: 180%;
+			/* 15.977px */
+			text-transform: uppercase;
+
+		}
+
+		.textSection {
+
+			/* need to make a height so that we can scroll */
+			height: 50vh;
+			overflow: scroll;
+
+
+
+		}
+
+
+
 	}
 
 
-	.flockDetails {
-		display: flex;
-		flex-direction: row;
-		height: 200px;
 
+
+
+
+
+
+
+
+
+	/* SCREEN IS SMALLER THAN 530 PX */
+	@media screen and (max-width: 530px) {
+		nav {
+
+			width: 80%;
+
+
+		}
 	}
 
-	#notFlockDiv {
+	/* SCREEN IS SMALLER THATN 400 PX */
 
-		width: 100%;
-		height: 100%;
-		/* background-color: aqua; */
+	@media screen and (max-width: 400px) {}
 
-	}
-
-	#flockDiv {
-
-		width: 100%;
-		height: 100%;
-		/* background-color: #FFFF00; */
-		padding-top: 80px;
-
-	}
-
-	#BirdImage {
-		width: 60%;
-	}
-
-	.navContainer {
-		display: flex;
-		flex-direction: row;
-		justify-content: center;
-		padding-top: 60px;
-		padding-bottom: 30px;
-	}
-
-	nav {
-		background-color: #000;
-		color: azure;
-		width: 70%;
-		/*  each element is spaced evenly*/
-		display: flex;
-		justify-content: space-between;
-		padding: 0px 20px 0px 20px;
-		flex-direction: row;
-		border-radius: 200px;
-		font-family: Shader;
-		font-size: 8px;
-		font-style: normal;
-		font-weight: 600;
-		line-height: 180%;
-		/* 15.977px */
-		text-transform: uppercase;
-		
-	}
-	.textSection {
-
-		/* need to make a height so that we can scroll */
-		height: 50vh;
-		overflow: scroll;
-	
-	
-	
-	}
-
-
-
-}
-
-
-
-
-
-
-
-
-
-
-
-/* SCREEN IS SMALLER THAN 530 PX */
-@media screen and (max-width: 530px) {
-	nav {
-		
-		width: 80%;
-	
-		
-	}
-}
-
-/* SCREEN IS SMALLER THATN 400 PX */
-
-@media screen and (max-width: 400px) {}
-
-/* WHEN SCREEN IS SMALLER THAN 350 PX */
-@media screen and (max-width: 350px) {}
+	/* WHEN SCREEN IS SMALLER THAN 350 PX */
+	@media screen and (max-width: 350px) {}
