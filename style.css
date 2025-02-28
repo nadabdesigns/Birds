@@ -33,13 +33,21 @@ body {
 	display: flex;
 	flex-direction: column;
 }
-.flexDiv{
-display: flex;
-flex-direction: row;
+
+.Bigsection {
+	padding-top: 10vh;
+}
+
+.flexDiv {
+	/* display: grid;
+	grid-template-columns: 1fr 4fr; */
+	column-gap: 10px;
+	display: flex
+
 }
 
 .webNav {
-	height: 80px;
+	height: 120px;
 	width: 100px;
 	background-color: aqua;
 	color: #000;
@@ -57,6 +65,10 @@ flex-direction: row;
 	*/
 	/* 15.977px */
 	text-transform: uppercase;
+	/* margin-top: 60px;
+	margin-left:30px; */
+	justify-content: center;
+
 }
 
 
@@ -85,12 +97,7 @@ flex-direction: row;
 	color: var(--Black);
 }
 
-.webNav {
-	height: 80px;
-	width: 100px;
-	background-color: aqua;
-	color: #000;
-}
+
 
 
 /*  */
@@ -102,8 +109,40 @@ flex-direction: row;
 
 }
 
+/* display flex all birds */
+.birds1 .birds2 .birds3 {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: var(--Black);
+
+	font-family: Shader;
+
+	font-style: normal;
+	font-weight: 700;
+	line-height: normal;
+	text-transform: uppercase;
+
+
+
+}
+
+/* ofset that one bird */
+.birds2 {
+	padding-left: 30px;
+	position: relative;
+	padding-left: 30px;
+}
+
+#decrativeBar {
+
+	background-color: var(--Black);
+	width: 100%;
+	height: 20px;
+}
+
 .sunDiv {
-	width: 100vw;
+	width: 60vw;
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
@@ -115,12 +154,13 @@ flex-direction: row;
 	display: flex;
 	justify-content: center;
 	background-color: var(--yellow);
-	height: 40vh;
-	width: 40vh;
+	height: 50vh;
+	width: 50vh;
 	border-radius: 800px;
 	position: absolute;
 	z-index: -1;
 }
+
 .flockDetails {
 	display: flex;
 	flex-direction: row;
@@ -130,7 +170,7 @@ flex-direction: row;
 
 #notFlockDiv {
 
-	width: 100%;
+	width: 0%;
 	height: 100%;
 	/* background-color: aqua; */
 
@@ -146,15 +186,16 @@ flex-direction: row;
 }
 
 #BirdImage {
-	width: 60%;
+	width: 300%;
 }
 
 .navContainer {
-	display: flex;
-	flex-direction: row;
+	/* display: flex; */
+	/* flex-direction: row; */
 	justify-content: center;
 	padding-top: 60px;
 	padding-bottom: 30px;
+	display: none;
 }
 
 nav {
@@ -188,8 +229,8 @@ nav {
 }
 
 
-	/* center it within the div */
-	/* position: relative;
+/* center it within the div */
+/* position: relative;
 left: 20vw;
 
 
@@ -216,179 +257,180 @@ left: 20vw;
 
 /* MEDIA QUERIES */
 
-	/* ALL RULES THAT APPLY WHEN SCREEN IS SMALLER THAN 1050 PX */
-	@media screen and (max-width: 1050px) {}
+/* ALL RULES THAT APPLY WHEN SCREEN IS SMALLER THAN 1050 PX */
+@media screen and (max-width: 1050px) {}
 
-	/* WHEN SCREEN IS SMALLER THAN 600 PX */
-	@media screen and (max-width: 600px) {
+/* WHEN SCREEN IS SMALLER THAN 600 PX */
+@media screen and (max-width: 600px) {
 
-		/* FLEX UP AND DOWN FOR MOBILE */
-		/* for fonts */
-		/* DISPLAY NONE */
-		.flexDiv{
-			display: flex;
-			flex-direction: column;
-			}
-		.webNav {
+	/* FLEX UP AND DOWN FOR MOBILE */
+	/* for fonts */
+	/* DISPLAY NONE */
+	.flexDiv {
+		display: flex;
+		flex-direction: column;
+	}
 
-			display: none;
-		}
+	.webNav {
 
-		p {
-			padding: 30px;
+		display: none;
+	}
 
-
-			font-family: "Space Grotesk";
-			font-size: 15px;
-			font-style: normal;
-			font-weight: 700;
-			line-height: normal;
-			text-transform: uppercase;
-
-		}
-
-		body {
-			display: flex;
-			flex-wrap: nowrap;
-			flex-direction: column;
-		}
+	p {
+		padding: 30px;
 
 
+		font-family: "Space Grotesk";
+		font-size: 15px;
+		font-style: normal;
+		font-weight: 700;
+		line-height: normal;
+		text-transform: uppercase;
 
-		/* .sideNav {
+	}
+
+	body {
+		display: flex;
+		flex-wrap: nowrap;
+		flex-direction: column;
+	}
+
+
+
+	/* .sideNav {
 		height: 80px;
 		background-color: aqua;
 	} */
 
-		.birdsSection {
+	.birdsSection {
 
-			/* placing birds where we want */
-			display: flex;
-			flex: 3;
-			justify-content: center;
-			height: 70%;
-			background-color: var(--red--);
-			z-index: 0;
-			flex-direction: column;
-			position: relative;
-			/* font changes */
-			font-family: "shader", sans-serif;
-			font-weight: 700;
-			font-size: 60px;
+		/* placing birds where we want */
+		display: flex;
+		flex: 3;
+		justify-content: center;
+		height: 70%;
+		background-color: var(--red--);
+		z-index: 0;
+		flex-direction: column;
+		position: relative;
+		/* font changes */
+		font-family: "shader", sans-serif;
+		font-weight: 700;
+		font-size: 60px;
 
-			color: var(--Black);
-		}
+		color: var(--Black);
+	}
 
-		/* display flex all birds */
-		.birds1 .birds2 .birds3 {
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			color: var(--Black);
+	/* display flex all birds */
+	.birds1 .birds2 .birds3 {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		color: var(--Black);
 
-			font-family: Shader;
+		font-family: Shader;
 
-			font-style: normal;
-			font-weight: 700;
-			line-height: normal;
-			text-transform: uppercase;
+		font-style: normal;
+		font-weight: 700;
+		line-height: normal;
+		text-transform: uppercase;
 
 
-		}
+	}
 
-		/* ofset that one bird */
-		.birds2 {
-			padding-left: 30px;
-			position: relative;
-			padding-left: 30px;
-		}
+	/* ofset that one bird */
+	.birds2 {
+		padding-left: 30px;
+		position: relative;
+		padding-left: 30px;
+	}
 
-		.sunDiv {
-			width: 100vw;
-			display: flex;
-			flex-direction: column;
-			justify-content: center;
+	#decrativeBar {
+		display: none;
+	}
 
-		}
+	.sunDiv {
+		width: 100vw;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
 
-		#bigSun {
-			background-color: var(--yellow);
-			height: 40vh;
-			width: 40vh;
-			border-radius: 200px;
+	}
 
-			/* center it within the div */
-			/* position: relative;
+	#bigSun {
+		background-color: var(--yellow);
+		height: 40vh;
+		width: 40vh;
+		border-radius: 200px;
+
+		/* center it within the div */
+		/* position: relative;
 	left: 20vw; */
 
-		}
+	}
 
 
-		.flockDetails {
-			display: flex;
-			flex-direction: row;
-			height: 200px;
+	.flockDetails {
+		display: flex;
+		flex-direction: row;
+		height: 200px;
 
-		}
+	}
 
-		#notFlockDiv {
+	#notFlockDiv {
 
-			width: 100%;
-			height: 100%;
-			/* background-color: aqua; */
+		width: 100%;
+		height: 100%;
+		/* background-color: aqua; */
 
-		}
+	}
 
-		#flockDiv {
+	#flockDiv {
 
-			width: 100%;
-			height: 100%;
-			/* background-color: #FFFF00; */
-			padding-top: 80px;
+		width: 100%;
+		height: 100%;
+		/* background-color: #FFFF00; */
+		padding-top: 80px;
 
-		}
+	}
 
-		#BirdImage {
-			width: 60%;
-		}
+	#BirdImage {
+		width: 60%;
+	}
 
-		.navContainer {
-			display: flex;
-			flex-direction: row;
-			justify-content: center;
-			padding-top: 60px;
-			padding-bottom: 30px;
-		}
+	.navContainer {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		padding-top: 60px;
+		padding-bottom: 30px;
+	}
 
-		nav {
-			background-color: #000;
-			color: azure;
-			width: 70%;
-			/*  each element is spaced evenly*/
-			display: flex;
-			justify-content: space-between;
-			padding: 0px 20px 0px 20px;
-			flex-direction: row;
-			border-radius: 200px;
-			font-family: Shader;
-			font-size: 8px;
-			font-style: normal;
-			font-weight: 600;
-			line-height: 180%;
-			/* 15.977px */
-			text-transform: uppercase;
+	nav {
+		background-color: #000;
+		color: azure;
+		width: 70%;
+		/*  each element is spaced evenly*/
+		display: flex;
+		justify-content: space-between;
+		padding: 0px 20px 0px 20px;
+		flex-direction: row;
+		border-radius: 200px;
+		font-family: Shader;
+		font-size: 8px;
+		font-style: normal;
+		font-weight: 600;
+		line-height: 180%;
+		/* 15.977px */
+		text-transform: uppercase;
 
-		}
+	}
 
-		.textSection {
+	.textSection {
 
-			/* need to make a height so that we can scroll */
-			height: 50vh;
-			overflow: scroll;
-
-
-
-		}
+		/* need to make a height so that we can scroll */
+		height: 50vh;
+		overflow: scroll;
 
 
 
@@ -396,6 +438,7 @@ left: 20vw;
 
 
 
+}
 
 
 
@@ -404,19 +447,22 @@ left: 20vw;
 
 
 
-	/* SCREEN IS SMALLER THAN 530 PX */
-	@media screen and (max-width: 530px) {
-		nav {
-
-			width: 80%;
 
 
-		}
+
+/* SCREEN IS SMALLER THAN 530 PX */
+@media screen and (max-width: 530px) {
+	nav {
+
+		width: 80%;
+
+
 	}
+}
 
-	/* SCREEN IS SMALLER THATN 400 PX */
+/* SCREEN IS SMALLER THATN 400 PX */
 
-	@media screen and (max-width: 400px) {}
+@media screen and (max-width: 400px) {}
 
-	/* WHEN SCREEN IS SMALLER THAN 350 PX */
-	@media screen and (max-width: 350px) {}
+/* WHEN SCREEN IS SMALLER THAN 350 PX */
+@media screen and (max-width: 350px) {}
