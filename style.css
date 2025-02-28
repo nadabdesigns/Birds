@@ -41,8 +41,9 @@ body {
 .flexDiv {
 	/* display: grid;
 	grid-template-columns: 1fr 4fr; */
-	column-gap: 10px;
-	display: flex
+	column-gap: 25px;
+	display: flex;
+	margin: 40px
 
 }
 
@@ -68,6 +69,8 @@ body {
 	/* margin-top: 60px;
 	margin-left:30px; */
 	justify-content: center;
+	/* margin-top: calc(10vh)+calc(10px); */
+	margin-top: 11vh;
 
 }
 
@@ -336,6 +339,14 @@ left: 20vw;
 		text-transform: uppercase;
 
 
+	}
+	.flexDiv {
+		/* display: grid;
+		grid-template-columns: 1fr 4fr; */
+		column-gap: 25px;
+		display: flex;
+		margin: 0px
+	
 	}
 
 	/* ofset that one bird */
