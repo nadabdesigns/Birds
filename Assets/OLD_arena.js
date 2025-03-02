@@ -96,7 +96,7 @@ let renderBlock = (block) => {
 
 
 
-			// IMPORTANT ----------------
+			// IMPORTANT ----------------I got reid of the back ground by commenting it out---
 			// targeting manually the background of the body and making it the specific image
 			// document.body.style.backgroundImage = `url(${block.image.large.url})`;
 			// make the image fit within the vewport by containing it to it's natral size vs cover blows it up

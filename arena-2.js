@@ -49,9 +49,7 @@ let renderBlock = (block) => {
 
 
 
-	// Want to click on item and then have it appear in the div when it's an image
-	// set the class div for the images 
-	// assign div with a class link 
+	
 	// Images Test!
 	else if (block.class == 'Image') {
 		// let can be changed when ever i want and const will be for forever
@@ -60,7 +58,7 @@ let renderBlock = (block) => {
 		let imageItem =
 
 			`
-			<div id="#all-blocks"></div>
+			<div id="#all-blocks">
 			${block.image.large.url}
 			${block.title}
 			
@@ -80,7 +78,7 @@ let renderBlock = (block) => {
 
 	else if (block.class == 'Image') {
 		// let can be changed when ever i want and const will be for forever
-console.log(block)
+		console.log(block)
 
 		let imageItem =
 
@@ -95,8 +93,8 @@ ${block.title}
 		`
 		// …up to you!
 	}
-	
-	
+
+
 
 	// step one make the titles of the blocks appear in the text
 

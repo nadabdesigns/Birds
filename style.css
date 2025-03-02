@@ -13,11 +13,24 @@
 	height: 200px;
 	
 }
+#bigSun {
+	display: flex;
+	justify-content: center;
+	background-color: var(--yellow);
+	height: 50vh;
+	width: 50vh;
+	border-radius: 800px;
+	position: absolute;
+	z-index: 1;
+}
+#bigSun.highlight{
+	background-color: aqua;
+}
 
 
 
 
-
+/* -------- */
 
 
 /* NORMAL */
@@ -160,16 +173,7 @@ body {
 
 }
 
-#bigSun {
-	display: flex;
-	justify-content: center;
-	background-color: var(--yellow);
-	height: 50vh;
-	width: 50vh;
-	border-radius: 800px;
-	position: absolute;
-	z-index: -1;
-}
+
 
 .flockDetails {
 	display: flex;
