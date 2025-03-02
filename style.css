@@ -230,6 +230,18 @@ nav {
 
 
 }
+p {
+	padding: 30px;
+
+
+	font-family: "Space Grotesk";
+	font-size: 15px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: normal;
+	text-transform: uppercase;
+
+}
 
 
 /* center it within the div */
