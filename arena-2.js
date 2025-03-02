@@ -45,19 +45,49 @@ let renderBlock = (block) => {
 		channelBlocks.insertAdjacentHTML('beforeend', linkItem)
 	}
 
-	
 
-	// Images!
+
+
+
+	// Want to click on item and then have it appear in the div when it's an image
+	// set the class div for the images 
+	// assign div with a class link 
+	// Images Test!
 	else if (block.class == 'Image') {
-// let can be changed when ever i want and const will be for forever
+		// let can be changed when ever i want and const will be for forever
 
 
 		let imageItem =
-		
-		
-		`
 
-		${block.image.original.url}
+			`
+			<div id="#all-blocks"></div>
+			${block.image.large.url}
+			${block.title}
+			
+			</li>
+			<img src="${block.image.original.url}">
+			 </div>
+
+	
+			
+			`
+		// …up to you!
+	}
+
+
+
+	// Images!
+
+	else if (block.class == 'Image') {
+		// let can be changed when ever i want and const will be for forever
+console.log(block)
+
+		let imageItem =
+
+
+			`
+<p class="itemName">
+${block.title}
 		
 		
 		
@@ -65,6 +95,10 @@ let renderBlock = (block) => {
 		`
 		// …up to you!
 	}
+	
+	
+
+	// step one make the titles of the blocks appear in the text
 
 	// Text!
 	// make styling for text 
@@ -174,7 +208,7 @@ fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-stor
 	.then((response) => response.json()) // Return it as JSON data
 	.then((data) => { // Do stuff with the data
 		console.log(data) // Always good to check your response!
-		
+
 		placeChannelInfo(data) // Pass the data to the first function
 
 		// Loop through the `contents` array (list), backwards. Are.na returns them in reverse!
@@ -182,7 +216,7 @@ fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-stor
 			// console.log(block) // The data for a single block
 			renderBlock(block) // Pass the single block data to the render function
 		})
-// lets you stor things in the name 
+		// lets you stor things in the name 
 		// Also display the owner and collaborators:
 		let channelUsers = document.querySelector('#channel-users') // Show them together
 		data.collaborators.forEach((collaborator) => renderUser(collaborator, channelUsers))
