@@ -119,33 +119,33 @@ let renderBlock = (block) => {
 		//   </div>
 		//   `
 		// channelBlocks.insertAdjacentHTML('beforeend', imageItem)
-//  went to tutoring and they showed me how to do this
-// we are declaring a varible callled imageItem
-// we are placing inside of a div clAA GIRD-ITEM
-// a onclick event that displays the block title or untitled 
-//  on click go to the console and print the name of the image 
-// send and alert with block title or untilted 
-//   \\n - this means make it a new line
-// the block has a property called created_at (this is the date it was created at )
-// .to LocaleDateString - fomating the date for when we see it as 
-// on a different linke we displayed the full name of the block 
-// arena displays the name of the user who created the image originally
-// all titles 
+		//  went to tutoring and they showed me how to do this
+		// we are declaring a varible callled imageItem
+		// we are placing inside of a div clAA GIRD-ITEM
+		// a onclick event that displays the block title or untitled 
+		//  on click go to the console and print the name of the image 
+		// send and alert with block title or untilted 
+		//   \\n - this means make it a new line
+		// the block has a property called created_at (this is the date it was created at )
+		// .to LocaleDateString - fomating the date for when we see it as 
+		// on a different linke we displayed the full name of the block 
+		// arena displays the name of the user who created the image originally
+		// all titles 
 
 
-// create and image 
-// if the block title is not equal to  donts.svg then run the following fuction 
-if (block.title != 'dots.svg') {
-		let imageItem =
-			`
- 		 <div class="grid-item" onclick="console.log('Image clicked: ${block.title || 'Untitled'}'); alert('Title: ${block.title || 'Untitled'}\\nAdded: ${new Date(block.created_at).toLocaleDateString()}\\nBy: ${block.user.full_name}')">
-  		  <img src="${block.image.large.url}" alt="${block.title || 'Bird image'}">
-   		 ${block.title ? `<figcaption>${block.title}</figcaption>` : ''} 
- 		 </div>
+		// create and image 
+		// if the block title is not equal to  donts.svg then run the following fuction 
+		if (block.title != 'dots.svg') {
+			let imageItem =
+				`
+ 			<div class="textblock">
+		<p class="firstText">${block.title}</p>
+		<p>${block.content_html}</p>
+		</div>
   `
-		channelBlocks.insertAdjacentHTML('beforeend', imageItem)
+			channelBlocks.insertAdjacentHTML('beforeend', imageItem)
+		}
 	}
-}
 
 	// else if (block.class == 'Image') {
 
@@ -179,10 +179,10 @@ if (block.title != 'dots.svg') {
 	// Text!
 
 	else if (block.class == 'Text') {
-	// console.log(block)
-	// console.log("i'm a block")
-	let textItem =
-		`
+		// console.log(block)
+		// console.log("i'm a block")
+		let textItem =
+			`
 			<div class="textblock">
 		<p class="firstText">${block.title}</p>
 		<p>${block.content_html}</p>
@@ -190,102 +190,106 @@ if (block.title != 'dots.svg') {
 		
 	
 		`
-	// inserting text block above html
-	channelBlocks.insertAdjacentHTML('beforeend', textItem)
-	// …up to you!
-	// got his from MDN it's for a clicking action so i can get my pop up menues
+		// inserting text block above html
+		channelBlocks.insertAdjacentHTML('beforeend', textItem)
+		// …up to you!
+		// got his from MDN it's for a clicking action so i can get my pop up menues
 
-	channelBlocks.addEventListener("click", (event) => {
-		console.log('heehehhehe')
+		channelBlocks.addEventListener("click", (event) => {
+			console.log('heehehhehe')
 
 
-	});
+		});
 
-	onclick = (event) => { };
+		onclick = (event) => { };
 
-}
+	}
 
-// Uploaded (not linked) media…
-else if (block.class == 'Attachment') {
-	// console.log(block)
-	let attachment = block.attachment.content_type // Save us some repetition
+	// Uploaded (not linked) media…
+	else if (block.class == 'Attachment') {
+		// console.log(block)
+		let attachment = block.attachment.content_type // Save us some repetition
 
-	// Uploaded videos!
-	console.log('im special')
-	if (attachment.includes('video')) {
-		// …still up to you, but we’ll give you the `video` element:
+		// Uploaded videos!
+		console.log('im special')
+		if (attachment.includes('video')) {
+			// …still up to you, but we’ll give you the `video` element:
 
-		let videoItem =
-			`
+			let videoItem =
+				`
+				<p>${block.title || block.generated_title}></p>
 				<div class='UploadedVideoBlock'>
 
 					
 					<video controls src="${block.attachment.url}"></video>
 				</li>
 				`
-		// <p><em>${block.title || block.generated_title}</em></p>
-		channelBlocks.insertAdjacentHTML('beforeend', videoItem)
-		// More on video, like the `autoplay` attribute:
-		// https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video
-	}
+			// <p><em>${block.title || block.generated_title}</em></p>
+			channelBlocks.insertAdjacentHTML('beforeend', videoItem)
+			// More on video, like the `autoplay` attribute:
+			// https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video
+		}
 
-	// Uploaded PDFs!
-	else if (attachment.includes('pdf')) {
-		// console.log('pdf', block)
-		let PDFItem =
+		// Uploaded PDFs!
 
-			`
-				
-					<p>${block.generated_title}></p>
+		else if (attachment.includes('pdf')) {
+			// console.log('pdf', block)
+
+			let PDFItem =
+
+				`
+		
+		
+					<p>${block.title || block.generated_title}></p>
 				
 				`
-		// …up to you!
-	}
+			// …up to you!
+		}
 
-	// Uploaded audio!
-	else if (attachment.includes('audio')) {
-		// …still up to you, but here’s an `audio` element:
-		// console.log('audio', block)
-		let audioItem =
-			`
+		// Uploaded audio!
+		else if (attachment.includes('audio')) {
+			// …still up to you, but here’s an `audio` element:
+			// console.log('audio', block)
+			let audioItem =
+				`
 				<li>
 					<audio controls src="${block.attachment.url}"></audio>
 					<p>${block.title}</p>
 				</li>
 				`
-		channelBlocks.insertAdjacentHTML('beforeend', audioItem)
-		// More on audio: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/audio
+			channelBlocks.insertAdjacentHTML('beforeend', audioItem)
+			// More on audio: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/audio
+		}
 	}
-}
 
-// Linked media…
+	// Linked media…
 
-else if (block.class == 'Media') {
-	// console.log('Media', block)
-	let embed = block.embed.type
+	else if (block.class == 'Media') {
+		// console.log('Media', block)
+		let embed = block.embed.type
 
-	// Linked video!
-	console.log('hello')
-	if (embed.includes('video')) {
-		// …still up to you, but here’s an example `iframe` element:
-		let linkedVideoItem =
-			`
+		// Linked video!
+		console.log('hello')
+		if (embed.includes('video')) {
+			// …still up to you, but here’s an example `iframe` element:
+			let linkedVideoItem =
+				`
 				
 				<div class="VideoBlock">
-					<!-- <p><em>${block.title || block.generated_title}</em></p> -->
+					<p><${block.title || block.generated_title}</p>
 					${block.embed.html}
 				</li>
 				`
-		channelBlocks.insertAdjacentHTML('beforeend', linkedVideoItem)
-		// More on iframe: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe
-	}
+			channelBlocks.insertAdjacentHTML('beforeend', linkedVideoItem)
+			// More on iframe: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe
+		}
 
 
-	// Linked audio!
-	else if (embed.includes('rich')) {
-		// …up to you!
+		// Linked audio!
+		else if (embed.includes('rich')) {
+			// …up to you!
+		}
 	}
-}
 }
 
 

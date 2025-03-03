@@ -28,6 +28,23 @@
 
 }
 
+dialog {
+	color: white;
+	gap: calc(4 * var(--base));
+	inset: 0; /* Fill the viewport! */
+	place-content: center; /* Center the tracks. */
+	place-items: center; /* Center within the tracks. */
+
+	&[open] { display: grid } /* `block` is default, but we can override. */
+}
+/* looking within the modal */
+.close { background-color: tomato; } /* Always have a clear “close” `button`. */
+
+::backdrop {
+	background-color: rgb(0 0 0 / 75%); /* A dark overlay. */
+	backdrop-filter: blur(8px); /* Maybe a little “glassmorphism”? */
+}
+
 
 
 
@@ -241,9 +258,18 @@ nav {
 
 }
 p {
-	padding: 30px;
+	padding-top: 10px;
 
 
+	font-family: "Space Grotesk";
+	font-size: 15px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: normal;
+	text-transform: uppercase;
+
+}
+#all-blocks {
 	font-family: "Space Grotesk";
 	font-size: 15px;
 	font-style: normal;
