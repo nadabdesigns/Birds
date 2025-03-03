@@ -15,6 +15,8 @@ switchButton.onclick = () => { // “Listen” for clicks.
 	textBlock.classList.toggle(highlightClass) // Toggle the class!
 }
 
+// how do i get it to click acording to the API
+
 
 
 //  let imagelisten 

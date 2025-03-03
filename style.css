@@ -24,16 +24,15 @@
 	z-index: 1;
 }
 #bigSun.highlight{
-	background-color: aqua;
+	background-color: var(--Black);
+
 }
 
 
 
 
-/* -------- */
 
-
-/* NORMAL */
+/* NORMAL -------- */
 LEFT TO RIGHT FOR WEB
 /* p {
 	padding: 30px;
@@ -70,8 +69,8 @@ body {
 .webNav {
 	height: 120px;
 	width: 100px;
-	background-color: aqua;
-	color: #000;
+	background-color: var(--Black);
+	color: white;
 	/*  each element is spaced evenly*/
 	display: flex;
 	justify-content: space-between;
@@ -441,7 +440,7 @@ left: 20vw;
 	}
 
 	nav {
-		background-color: #000;
+		background-color: var(--Black);
 		color: azure;
 		width: 70%;
 		/*  each element is spaced evenly*/
