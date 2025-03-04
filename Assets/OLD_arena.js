@@ -228,16 +228,28 @@ let renderBlock = (block) => {
 		// Uploaded PDFs!
 
 		else if (attachment.includes('pdf')) {
-			// console.log('pdf', block)
+			 console.log(block)
+			 console.log('pdf')
 
 			let PDFItem =
 
-				`
+				`	
+				<div class="image-bloc">
+				<p>${block.title || block.generated_title}></p>
+				<div class='UploadedVideoBlock'>
+
+					
+					
+				
+				
+				
 		
 		
-					<p>${block.title || block.generated_title}></p>
+					
+					</div>
 				
 				`
+				channelBlocks.insertAdjacentHTML('beforeend', PDFItem)
 			// …up to you!
 		}
 
