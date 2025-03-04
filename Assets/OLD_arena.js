@@ -54,26 +54,24 @@ let renderBlock = (block) => {
 		// console.log(block)
 		// all pictures that are links
 		let linkItem =
-		`<div class="image-bloc">
-		<button class ="buttonClass">
-		<picture class="grid-picture">
+			`
+			<li class="grid-item block block--link">
+				<p><em>Link</em></p>
+				// giving a class to my grid pictures 
+				<picture class="grid-picture">
 					<source media="(max-width: 428px)" srcset="${block.image.thumb.url}"><br>
 					<source media="(max-width: 640px)" srcset="${block.image.large.url}"><br>
 					<img src="${block.image.original.url}">
-
 				</picture>
+			
 				<p class="date">${block.created_at}<p>
 				<p><a href="${block.source.url}">See the original ↗</a></p>
-		</button>
-		<dialogue></dialogue>
-		</div>
-
-		`
+			</li>
+			
+			`
 		// <h3>${block.title}</h3>
 		channelBlocks.insertAdjacentHTML('beforeend', linkItem)
 	}
-
-
 
 	// Images!
 
@@ -228,25 +226,14 @@ let renderBlock = (block) => {
 		// Uploaded PDFs!
 
 		else if (attachment.includes('pdf')) {
-			 console.log(block)
-			 console.log('pdf')
+			// console.log('pdf', block)
 
 			let PDFItem =
 
-				`	
-				<div class="image-bloc">
-				<p>${block.title || block.generated_title}></p>
-				<div class='UploadedVideoBlock'>
-
-					
-					
-				
-				
-				
+				`
 		
 		
-					
-					</div>
+					<p>${block.title || block.generated_title}></p>
 				
 				`
 				channelBlocks.insertAdjacentHTML('beforeend', PDFItem)
@@ -315,10 +302,8 @@ openButton.onclick = () =>{
 	// dialog.showModal()
 	console.log(modalImage.src)
 	modal.show() // This opens it up.
-	// switch out the sorce with image that was clicked
+	// we
 	modalImage.src = block.querySelector("img").src;
-	
-	
 
 	console.log("clicked")
 	bigSun.classList.add("white-background");//make other circle witw
@@ -329,7 +314,7 @@ openButton.onclick = () =>{
 
 }
 closeButton.onclick = () => {
-	modal.close() // this closes it!
+	modal.close() // And this closes it!
 	bigSun.classList.remove("white-background")
 	
 }
