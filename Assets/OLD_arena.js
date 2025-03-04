@@ -85,28 +85,7 @@ let renderBlock = (block) => {
 		// we have to add the src ( where is the image being fetched)
 
 		// declaring a varible called dots
-		let dots
-		// for every looped block title we are looking for dots 
-		// if the block title is dots.svg then i'm storing the objects info in the data
-		// if the block title is equal to dots.svg then let dots equal block, block is the blackground
-		if (block.title == 'dots.svg') {
-
-			dots = block
-			console.log(dots)
-			console.log('im special')
-
-
-
-			// IMPORTANT ----------------I got reid of the back ground by commenting it out
-			// targeting manually the background of the body and making it the specific image
-			// document.body.style.backgroundImage = `url(${block.image.large.url})`;
-			// make the image fit within the vewport by containing it to it's natral size vs cover blows it up
-
-			document.body.style.backgroundSize = 'contain';
-			// step and repeating that image
-			document.body.style.backgroundRepeat = 'repeat';
-
-		}
+		
 		// sorce is where you would place the url
 		// alt is the alt if the image doesnt display 
 		// if the image has a title it will use block.title and if not it will be Bird image
@@ -132,6 +111,8 @@ let renderBlock = (block) => {
 		// on a different linke we displayed the full name of the block 
 		// arena displays the name of the user who created the image originally
 		// all titles 
+		
+
 
 
 		// create and image 
@@ -165,24 +146,29 @@ let renderBlock = (block) => {
 			}
 		}
 	}
-	// else if (block.class == 'Image') {
+	// Make a button for images from Lume
+	else if (block.class == 'Image') {
 
-	// 	// create image
-	// 	let imageItem =
+		// 	// create image
+			let imageItem =
+	
+				`
+				<button>
+				<img src="${block.image.large.url}" alt="${block.title} by ${block.user.full_name}">
+				 <figcaption> ${block.title}</figcaption>
+				</button>
+				<dialogue></dialogue>
+	
+				`
+				channelBlocks.insertAdjacentHTML('beforeend', imageItem)
+				// style stuff here
+	
+		}
 
-	// 		`
-	// 		<img src="${block.image.large.url}" alt="${block.title} by ${block.user.full_name}">
-	// 		 <figcaption> ${block.title}</figcaption>
-
-	// 		`
-	// 		channelBlocks.insertAdjacentHTML('beforeend', imageItem)
-	// 		// style stuff here
-
-	// }
 	// time to use this on a specific SVG but using a different varable
 	// else if (block.class == 'Image') {
 
-	// 	// create image
+		
 	// 	let imageItem =
 
 	// 		`
@@ -191,7 +177,7 @@ let renderBlock = (block) => {
 
 	// 		`
 	// 		channelBlocks.insertAdjacentHTML('beforeend', imageItem)
-	// 		// style stuff here
+	// 	}
 
 
 	// Text!
@@ -309,8 +295,10 @@ let renderBlock = (block) => {
 		}
 	}
 }
-
-
+// from lume
+let ineraction = () =>{
+	console.log()
+}
 
 
 
@@ -329,6 +317,8 @@ fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-stor
 			// console.log(block) // The data for a single block
 			renderBlock(block) // Pass the single block data to the render function
 		})
+		// from lume
+		ineraction()
 
 		// Also display the owner and collaborators:
 		// let channelUsers = document.querySelector('#channel-users') // Show them together

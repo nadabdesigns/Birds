@@ -15,4 +15,3 @@ if (button) {
         sunDiv.style.display = "none"; // Hide sunDiv
     };
 }
-
