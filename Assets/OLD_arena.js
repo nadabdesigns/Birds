@@ -42,6 +42,7 @@ let placeChannelInfo = (data) => {
 
 // Then our big function for specific-block-type rendering:
 let renderBlock = (block) => {
+	
 	// To start, a shared `ul` where we’ll insert all our blocks
 	let channelBlocks = document.querySelector('#all-blocks');
 
@@ -141,7 +142,7 @@ let renderBlock = (block) => {
 		let closeButton = modal.querySelector('.close')
 	
 		button.onclick = () => { // “Listen” for clicks.
-			modal.showModal() // This opens it up.
+			modal.show() // This opens it up.
 			modalImage.src = block.image.large.url;
 			console.log("clicked")
 		}
@@ -155,7 +156,6 @@ let renderBlock = (block) => {
 				modal.close() // Close it then too.
 			}
 		}
-			
 	}
 	// else if (block.class == 'Image') {
 
