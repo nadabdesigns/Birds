@@ -89,7 +89,8 @@ body {
 	grid-template-columns: 1fr 4fr; */
 	column-gap: 25px;
 	display: flex;
-	margin: 40px
+	/* margin: 40px */
+	padding: 20px;
 
 }
 
@@ -118,6 +119,9 @@ body {
 	/* margin-top: calc(10vh)+calc(10px); */
 	margin-top: 1vh;
 
+}
+figcaption{
+	width: 100%;
 }
 
 
@@ -192,10 +196,10 @@ body {
 }
 
 .sunDiv {
-	width: 60vw;
+	
 	display: flex;
 	flex-direction: row;
-	justify-content: center;
+	justify-content: end;
 
 
 }
@@ -262,7 +266,7 @@ nav {
 .textSection {
 
 	/* need to make a height so that we can scroll */
-	height: 50vh;
+	height: 100vh;
 	overflow: scroll;
 
 
@@ -278,7 +282,7 @@ p {
 	font-weight: 700;
 	line-height: normal;
 	text-transform: uppercase;
-	max-width: 1300px;
+	max-width: 40%;
 
 }
 #all-blocks {
@@ -321,7 +325,22 @@ left: 20vw;
 /* MEDIA QUERIES */
 
 /* ALL RULES THAT APPLY WHEN SCREEN IS SMALLER THAN 1050 PX */
-@media screen and (max-width: 1050px) {}
+@media screen and (max-width: 1050px) {
+	p {
+		padding-top: 10px;
+	
+	
+		font-family: "Space Grotesk";
+		font-size: 15px;
+		font-style: normal;
+		font-weight: 700;
+		line-height: normal;
+		text-transform: uppercase;
+		max-width: 100%;
+	
+	}
+	
+}
 
 /* WHEN SCREEN IS SMALLER THAN 600 PX */
 @media screen and (max-width: 600px) {
@@ -340,11 +359,11 @@ left: 20vw;
 	}
 
 	p {
-		padding: 30px;
+		padding: 10px;
 
 
 		font-family: "Space Grotesk";
-		font-size: 15px;
+		font-size: 10px;
 		font-style: normal;
 		font-weight: 700;
 		line-height: normal;
