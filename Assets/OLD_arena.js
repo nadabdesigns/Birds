@@ -79,6 +79,18 @@ let renderBlock = (block) => {
 
 	// cecking block to see if it's an image
 	else if (block.class == 'Image') {
+		let imageItem =
+	
+		`
+		<button>
+		<img src="${block.image.large.url}" alt="${block.title} by ${block.user.full_name}">
+		 <figcaption> ${block.title}</figcaption>
+		</button>
+		<dialogue></dialogue>
+
+		`
+		channelBlocks.insertAdjacentHTML('beforeend', imageItem)
+		// style stuff here
 		// How to target a specif image...
 		// went to the learning center the showed me this...
 		// when you come across and image let it be a class of it's own (grid item)
@@ -145,25 +157,18 @@ let renderBlock = (block) => {
 				modal.close() // Close it then too.
 			}
 		}
+		
 	}
 	// Make a button for images from Lume
 	else if (block.class == 'Image') {
 
 		// 	// create image
-			let imageItem =
-	
-				`
-				<button>
-				<img src="${block.image.large.url}" alt="${block.title} by ${block.user.full_name}">
-				 <figcaption> ${block.title}</figcaption>
-				</button>
-				<dialogue></dialogue>
-	
-				`
-				channelBlocks.insertAdjacentHTML('beforeend', imageItem)
-				// style stuff here
+		console.log('imageeeeee')
+		
 	
 		}
+		
+		
 
 	// time to use this on a specific SVG but using a different varable
 	// else if (block.class == 'Image') {

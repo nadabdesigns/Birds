@@ -47,7 +47,7 @@ dialog[open] {
 button {
 	font-family: "Space Grotesk";
 	font-size: 25px;
-	width: 30px;
+	width: 100%;
 	
 }
 
