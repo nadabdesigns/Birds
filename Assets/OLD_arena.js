@@ -145,11 +145,19 @@ let renderBlock = (block) => {
 			modal.show() // This opens it up.
 			modalImage.src = block.image.large.url;
 			console.log("clicked")
+			bigSun.classList.add("white-background");//make other circle witw
+			
 		}
+		
 	
 		closeButton.onclick = () => {
 			modal.close() // And this closes it!
+			bigSun.classList.remove("white-background")
+			
 		}
+		modal.addEventListener("close", () => {
+			bigSun.style.backgroundColor = ""; // Reset to original background
+		});
 	
 		modal.onclick = (event) => { // Listen on our `modal` also…
 			if (event.target == modal) { // Only if clicks are to itself (the background).

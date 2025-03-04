@@ -24,18 +24,31 @@
 	z-index: -1;
 	right: 40px;
 }
-#bigSun.highlight{
-	background-color: var(--Black);
+#bigSun.white-background{
+	background-color: white;
 
 }
 dialog[open] {
-    display: flex;
+	display: flex;
     justify-content: center;
+    align-items: center; /* center */
     background-color: var(--yellow);
-    height: 50vh;
-    width: 50vh;
+    height: 80vh;
+    width: 80vh;
     border-radius: 800px;
-    z-index: 1;
+    position: fixed; 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    z-index: 1000; 
+	
+
+}
+button {
+	font-family: "Space Grotesk";
+	font-size: 25px;
+	width: 30px;
+	
 }
 
 dialog {
@@ -46,9 +59,10 @@ dialog {
 	place-items: center; /* Center within the tracks. */
 
 	&[open] { display: grid } /* `block` is default, but we can override. */
+	&[open] { gap: 20px; } /* `block` is default, but we can override. */
 }
 /* looking within the modal */
-.close { background-color: tomato; } /* Always have a clear “close” `button`. */
+.close { background-color: rgb(0, 0, 0); } /* Always have a clear “close” `button`. */
 
 ::backdrop {
 	background-color: rgb(0 0 0 / 75%); /* A dark overlay. */
