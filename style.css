@@ -44,6 +44,10 @@ dialog[open] {
 	
 
 }
+#dialogImage{
+	max-width: 60vh;
+	max-height: 60vh;
+}
 button {
 	font-family: "Space Grotesk";
 	font-size: 25px;

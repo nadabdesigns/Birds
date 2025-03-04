@@ -55,6 +55,7 @@ let renderBlock = (block) => {
 		// all pictures that are links
 		let linkItem =
 			`
+			<div class="image-bloc">
 			<li class="grid-item block block--link">
 				<p><em>Link</em></p>
 				// giving a class to my grid pictures 
@@ -67,6 +68,7 @@ let renderBlock = (block) => {
 				<p class="date">${block.created_at}<p>
 				<p><a href="${block.source.url}">See the original ↗</a></p>
 			</li>
+			</div>
 			
 			`
 		// <h3>${block.title}</h3>
