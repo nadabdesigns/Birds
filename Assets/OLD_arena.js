@@ -59,8 +59,8 @@ let renderBlock = (block) => {
 				<p><em>Link</em></p>
 				// giving a class to my grid pictures 
 				<picture class="grid-picture">
-					<source media="(max-width: 428px)" srcset="${block.image.thumb.url}">
-					<source media="(max-width: 640px)" srcset="${block.image.large.url}">
+					<source media="(max-width: 428px)" srcset="${block.image.thumb.url}"><br>
+					<source media="(max-width: 640px)" srcset="${block.image.large.url}"><br>
 					<img src="${block.image.original.url}">
 				</picture>
 			
