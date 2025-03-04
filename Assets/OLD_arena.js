@@ -317,6 +317,8 @@ openButton.onclick = () =>{
 	modal.show() // This opens it up.
 	// switch out the sorce with image that was clicked
 	modalImage.src = block.querySelector("img").src;
+	
+	
 
 	console.log("clicked")
 	bigSun.classList.add("white-background");//make other circle witw
