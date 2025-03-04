@@ -1,5 +1,6 @@
 
 
+
 // First, let’s lay out some *functions*, starting with our basic metadata:
 
 let channelSlug = 'project-4-birds';

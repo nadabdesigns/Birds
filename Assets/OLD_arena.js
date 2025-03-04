@@ -135,18 +135,28 @@ let renderBlock = (block) => {
 
 		// create and image 
 		// if the block title is not equal to  donts.svg then run the following fuction 
-		if (block.title != 'dots.svg') {
-			let imageItem =
-				`
- 			<div class="textblock">
-		<p class="firstText">${block.title}</p>
-		<p>${block.content_html}</p>
-		</div>
-  `
-			channelBlocks.insertAdjacentHTML('beforeend', imageItem)
+		let button = document.querySelector('#example')
+		let modal = document.querySelector('#dialog') // Now one for our `dialog`.
+		let modalImage = document.querySelector('#dialogImage');
+		let closeButton = modal.querySelector('.close')
+	
+		button.onclick = () => { // “Listen” for clicks.
+			modal.showModal() // This opens it up.
+			modalImage.src = block.image.large.url;
+			console.log("clicked")
 		}
+	
+		closeButton.onclick = () => {
+			modal.close() // And this closes it!
+		}
+	
+		modal.onclick = (event) => { // Listen on our `modal` also…
+			if (event.target == modal) { // Only if clicks are to itself (the background).
+				modal.close() // Close it then too.
+			}
+		}
+			
 	}
-
 	// else if (block.class == 'Image') {
 
 	// 	// create image
@@ -317,5 +327,3 @@ fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-stor
 		// data.collaborators.forEach((collaborator) => renderUser(collaborator, channelUsers))
 		// renderUser(data.user, channelUsers)
 	})
-
-
