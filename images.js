@@ -80,19 +80,19 @@ let renderBlock = (block) => {
 
 
 	// cecking block to see if it's an image
-	else if (block.class == 'Image') {
-		let imageItem =
+	// else if (block.class == 'Image') {
+	// 	let imageItem =
 	
-		`<div class="image-bloc">
-		<button class ="buttonClass">
-		<img src="${block.image.large.url}" alt="${block.title} by ${block.user.full_name}">
-		 <figcaption> ${block.title}</figcaption>
-		</button>
-		<dialogue></dialogue>
-		</div>
+	// 	`<div class="image-bloc">
+	// 	<button class ="buttonClass">
+	// 	<img src="${block.image.large.url}" alt="${block.title} by ${block.user.full_name}">
+	// 	 <figcaption> ${block.title}</figcaption>
+	// 	</button>
+	// 	<dialogue></dialogue>
+	// 	</div>
 
-		`
-		channelBlocks.insertAdjacentHTML('beforeend', imageItem)
+	// 	`
+	// 	channelBlocks.insertAdjacentHTML('beforeend', imageItem)
 		// style stuff here
 		// How to target a specif image...
 		// went to the learning center the showed me this...
@@ -141,151 +141,8 @@ let renderBlock = (block) => {
 		
 		
 	}
-	// Make a button for images from Lume
-	else if (block.class == 'Image') {
-
-		// 	// create image
-		console.log('imageeeeee')
-		
 	
-		}
-		
-		
 
-	// time to use this on a specific SVG but using a different varable
-	// else if (block.class == 'Image') {
-
-		
-	// 	let imageItem =
-
-	// 		`
-	// 		<img src="${block.image.large.url}" alt="${block.title} by ${block.user.full_name}">
-	// 		 <figcaption> ${block.title}</figcaption>
-
-	// 		`
-	// 		channelBlocks.insertAdjacentHTML('beforeend', imageItem)
-	// 	}
-
-
-	// Text!
-
-	else if (block.class == 'Text') {
-		// console.log(block)
-		// console.log("i'm a block")
-		let textItem =
-			`
-			<div class="textblock">
-		<p class="firstText">${block.title}</p>
-		<p>${block.content_html}</p>
-		</div>
-		
-	
-		`
-		// inserting text block above html
-		channelBlocks.insertAdjacentHTML('beforeend', textItem)
-		// …up to you!
-		// got his from MDN it's for a clicking action so i can get my pop up menues
-
-		channelBlocks.addEventListener("click", (event) => {
-			console.log('heehehhehe')
-
-
-		});
-
-		onclick = (event) => { };
-
-	}
-
-	// Uploaded (not linked) media…
-	else if (block.class == 'Attachment') {
-		
-		let attachment = block.attachment.content_type // Save us some repetition
-
-		// Uploaded videos!
-		console.log('im special')
-		if (attachment.includes('video')) {
-			// …still up to you, but we’ll give you the `video` element:
-			console.log(block)
-			
-
-			let videoItem =
-				`
-				<div class="image-bloc">
-				<p>${block.title || block.generated_title}></p>
-				<div class='UploadedVideoBlock'>
-
-					
-					<video controls src="${block.attachment.url}"></video>
-				</li>
-				</div>
-				`
-			// <p><em>${block.title || block.generated_title}</em></p>
-			channelBlocks.insertAdjacentHTML('beforeend', videoItem)
-			// More on video, like the `autoplay` attribute:
-			// https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video
-		}
-
-		// Uploaded PDFs!
-
-		else if (attachment.includes('pdf')) {
-			// console.log('pdf', block)
-
-			let PDFItem =
-
-				`
-		
-		
-					<p>${block.title || block.generated_title}></p>
-				
-				`
-			// …up to you!
-		}
-
-		// Uploaded audio!
-		else if (attachment.includes('audio')) {
-			// …still up to you, but here’s an `audio` element:
-			// console.log('audio', block)
-			let audioItem =
-				`
-				<li>
-					<audio controls src="${block.attachment.url}"></audio>
-					<p>${block.title}</p>
-				</li>
-				`
-			channelBlocks.insertAdjacentHTML('beforeend', audioItem)
-			// More on audio: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/audio
-		}
-	}
-
-	// Linked media…
-
-	else if (block.class == 'Media') {
-		// console.log('Media', block)
-		let embed = block.embed.type
-
-		// Linked video!
-		console.log('hello')
-		if (embed.includes('video')) {
-			// …still up to you, but here’s an example `iframe` element:
-			let linkedVideoItem =
-				`
-				
-				<div class="VideoBlock">
-					<p><${block.title || block.generated_title}</p>
-					${block.embed.html}
-				</li>
-				`
-			channelBlocks.insertAdjacentHTML('beforeend', linkedVideoItem)
-			// More on iframe: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe
-		}
-
-
-		// Linked audio!
-		else if (embed.includes('rich')) {
-			// …up to you!
-		}
-	}
-}
 // from lume
 let ineraction = () =>{
 	console.log()
