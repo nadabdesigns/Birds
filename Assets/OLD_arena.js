@@ -81,12 +81,13 @@ let renderBlock = (block) => {
 	else if (block.class == 'Image') {
 		let imageItem =
 	
-		`
-		<button>
+		`<div class="image-bloc">
+		<button class ="buttonClass">
 		<img src="${block.image.large.url}" alt="${block.title} by ${block.user.full_name}">
 		 <figcaption> ${block.title}</figcaption>
 		</button>
 		<dialogue></dialogue>
+		</div>
 
 		`
 		channelBlocks.insertAdjacentHTML('beforeend', imageItem)
@@ -130,33 +131,25 @@ let renderBlock = (block) => {
 		// create and image 
 		// if the block title is not equal to  donts.svg then run the following fuction 
 		let button = document.querySelector('#example')
-		let modal = document.querySelector('#dialog') // Now one for our `dialog`.
-		let modalImage = document.querySelector('#dialogImage');
-		let closeButton = modal.querySelector('.close')
-	
-		button.onclick = () => { // “Listen” for clicks.
-			modal.show() // This opens it up.
-			modalImage.src = block.image.large.url;
-			console.log("clicked")
-			bigSun.classList.add("white-background");//make other circle witw
-			
-		}
 		
 	
-		closeButton.onclick = () => {
-			modal.close() // And this closes it!
-			bigSun.classList.remove("white-background")
-			
-		}
-		modal.addEventListener("close", () => {
-			bigSun.style.backgroundColor = ""; // Reset to original background
-		});
+		
+		
 	
-		modal.onclick = (event) => { // Listen on our `modal` also…
-			if (event.target == modal) { // Only if clicks are to itself (the background).
-				modal.close() // Close it then too.
-			}
-		}
+		// closeButton.onclick = () => {
+		// 	modal.close() // And this closes it!
+		// 	bigSun.classList.remove("white-background")
+			
+		// }
+		// modal.addEventListener("close", () => {
+		// 	bigSun.style.backgroundColor = ""; // Reset to original background
+		// });
+	
+		// modal.onclick = (event) => { // Listen on our `modal` also…
+		// 	if (event.target == modal) { // Only if clicks are to itself (the background).
+		// 		modal.close() // Close it then too.
+		// 	}
+		// }
 		
 	}
 	// Make a button for images from Lume
@@ -303,6 +296,31 @@ let renderBlock = (block) => {
 // from lume
 let ineraction = () =>{
 	console.log()
+	let imageBlocks = document.querySelectorAll ('.image-bloc')
+	imageBlocks.forEach((block)=> {
+		let openButton = block.querySelector('button')
+		let modal = document.querySelector('#dialog') // Now one for our `dialog`.
+		let modalImage = document.querySelector('#dialogImage');
+		let closeButton = modal.querySelector('.close')
+
+
+
+// lisen for button click
+openButton.onclick = () =>{
+	// dialog.showModal()
+	console.log(modalImage.src)
+	modal.show() // This opens it up.
+	modalImage.src = block.image.large.url;
+	console.log("clicked")
+	bigSun.classList.add("white-background");//make other circle witw
+	
+
+
+
+}
+
+
+	})
 }
 
 
