@@ -203,7 +203,7 @@ let renderBlock = (block) => {
 		console.log('im special')
 		if (attachment.includes('video')) {
 			// …still up to you, but we’ll give you the `video` element:
-			console.log('Please work')
+			console.log(block)
 			
 
 			let videoItem =
