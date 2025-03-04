@@ -136,20 +136,7 @@ let renderBlock = (block) => {
 		
 		
 	
-		// closeButton.onclick = () => {
-		// 	modal.close() // And this closes it!
-		// 	bigSun.classList.remove("white-background")
-			
-		// }
-		// modal.addEventListener("close", () => {
-		// 	bigSun.style.backgroundColor = ""; // Reset to original background
-		// });
-	
-		// modal.onclick = (event) => { // Listen on our `modal` also…
-		// 	if (event.target == modal) { // Only if clicks are to itself (the background).
-		// 		modal.close() // Close it then too.
-		// 	}
-		// }
+		
 		
 	}
 	// Make a button for images from Lume
@@ -209,22 +196,26 @@ let renderBlock = (block) => {
 
 	// Uploaded (not linked) media…
 	else if (block.class == 'Attachment') {
-		// console.log(block)
+		
 		let attachment = block.attachment.content_type // Save us some repetition
 
 		// Uploaded videos!
 		console.log('im special')
 		if (attachment.includes('video')) {
 			// …still up to you, but we’ll give you the `video` element:
+			console.log('Please work')
+			
 
 			let videoItem =
 				`
+				<div class="image-bloc">
 				<p>${block.title || block.generated_title}></p>
 				<div class='UploadedVideoBlock'>
 
 					
 					<video controls src="${block.attachment.url}"></video>
 				</li>
+				</div>
 				`
 			// <p><em>${block.title || block.generated_title}</em></p>
 			channelBlocks.insertAdjacentHTML('beforeend', videoItem)
@@ -310,13 +301,30 @@ openButton.onclick = () =>{
 	// dialog.showModal()
 	console.log(modalImage.src)
 	modal.show() // This opens it up.
-	modalImage.src = block.image.large.url;
+	// we
+	modalImage.src = block.querySelector("img").src;
+
 	console.log("clicked")
 	bigSun.classList.add("white-background");//make other circle witw
+
 	
 
 
 
+}
+closeButton.onclick = () => {
+	modal.close() // And this closes it!
+	bigSun.classList.remove("white-background")
+	
+}
+modal.addEventListener("close", () => {
+	bigSun.style.backgroundColor = ""; // Reset to original background
+});
+
+modal.onclick = (event) => { // Listen on our `modal` also…
+	if (event.target == modal) { // Only if clicks are to itself (the background).
+		modal.close() // Close it then too.
+	}
 }
 
 

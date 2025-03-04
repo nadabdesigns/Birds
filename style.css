@@ -361,6 +361,12 @@ left: 20vw;
 /* WHEN SCREEN IS SMALLER THAN 600 PX */
 @media screen and (max-width: 600px) {
 
+
+	.image-bloc{
+
+		max-width: 100%;
+	}
+
 	/* FLEX UP AND DOWN FOR MOBILE */
 	/* for fonts */
 	/* DISPLAY NONE */
