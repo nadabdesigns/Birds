@@ -81,11 +81,12 @@ let renderBlock = (block) => {
 
 	// cecking block to see if it's an image
 	else if (block.class == 'Image') {
+		//display none for original image so that it only shows the text and then it can pull the image from that with the javascript
 		let imageItem =
 
 			`<div class="image-bloc">
 		<button class ="buttonClass">
-		 <img src="${block.image.large.url}" alt="${block.title} by ${block.user.full_name}">
+		 <img src="${block.image.large.url}" style = 'display:none' alt="${block.title} by ${block.user.full_name}"> 
 		 <figcaption> ${block.title}</figcaption>
 		</button>
 		<dialogue></dialogue>
@@ -174,10 +175,14 @@ let renderBlock = (block) => {
 		// console.log("i'm a block")
 		let textItem =
 			`
-			<div class="textblock">
+			<div class="image-bloc">
+		<button class ="buttonClass">
 		<p class="firstText">${block.title}</p>
 		<p>${block.content_html}</p>
+		</button>
 		</div>
+		
+
 		
 	
 		`
@@ -211,12 +216,14 @@ let renderBlock = (block) => {
 			let videoItem =
 				`
 				<div class="image-bloc">
-				<button>
+		<button class ="buttonClass">
+				
 				<p>${block.title || block.generated_title}></p>
 				<div class='UploadedVideoBlock'>
 
 					
 					<video controls src="${block.attachment.url}"></video>
+					</div>
 				</button>
 				</div>
 
@@ -234,10 +241,14 @@ let renderBlock = (block) => {
 
 			let PDFItem =
 
-				`
+				`	<div class="image-bloc">
+		<button class ="buttonClass">
 		
 		
 					<p>${block.title || block.generated_title}></p>
+					 <img src="${block.image.large.url}" style = 'display:none' alt="${block.title} by ${block.user.full_name}"> 
+					</div>
+					</button>
 				
 				`
 			channelBlocks.insertAdjacentHTML('beforeend', PDFItem)
