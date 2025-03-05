@@ -17,8 +17,8 @@
 	display: flex;
 	justify-content: center;
 	background-color: var(--yellow);
-	height: 50vh;
-	width: 50vh;
+	height: 55vh;
+	width: 55vh;
 	border-radius: 800px;
 	position: absolute;
 	z-index: -1;
@@ -168,6 +168,24 @@ figcaption{
 	text-transform: uppercase;
 	color: var(--Black);
 }
+h1 {
+	
+	
+
+
+	font-family: "Space Grotesk";
+	font-size: 60px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: normal;
+	
+	
+
+} 
+
+
+
+
 
 
 
