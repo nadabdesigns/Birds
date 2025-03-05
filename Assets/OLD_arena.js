@@ -51,7 +51,7 @@ let renderBlock = (block) => {
 
 	// Links!
 	if (block.class == 'Link') {
-		// console.log(block)
+		console.log(block)
 		// all pictures that are links
 		let linkItem =
 			`
@@ -61,12 +61,9 @@ let renderBlock = (block) => {
 				
 				
 				
-					<source media="(max-width: 428px)" srcset="${block.image.thumb.url}"><br>
-					<source media="(max-width: 640px)" srcset="${block.image.large.url}"><br>
-					<img src="${block.image.original.url}">
 				
-			
-				<p class="date">${block.created_at}<p>
+					<img src="${block.image.large.url}" style = 'display:none' alt="${block.title} by ${block.user.full_name}"> 
+		 <figcaption> ${block.title}</figcaption>
 				<p><a href="${block.source.url}">See the original ↗</a></p>
 			
 			</button>
@@ -89,9 +86,9 @@ let renderBlock = (block) => {
 			`<div class="image-bloc">
 		<button class ="buttonClass">
 		 <img src="${block.image.large.url}" style = 'display:none' alt="${block.title} by ${block.user.full_name}"> 
-		 <figcaption> ${block.title}</figcaption>
+		<p> <figcaption> ${block.title}</figcaption></p>
 		</button>
-		<dialogue></dialogue>
+		
 		</div>
 
 		`
@@ -144,14 +141,7 @@ let renderBlock = (block) => {
 
 
 	}
-	// Make a button for images from Lume
-	else if (block.class == 'Image') {
 
-		// 	// create image
-		console.log('imageeeeee')
-
-
-	}
 
 
 
@@ -205,6 +195,11 @@ let renderBlock = (block) => {
 
 	// Uploaded (not linked) media…
 	else if (block.class == 'Attachment') {
+
+		console.log(block)
+		console.log('atachment')
+
+		
 
 		let attachment = block.attachment.content_type // Save us some repetition
 
@@ -338,6 +333,7 @@ let ineraction = () => { // i am defining a fuction named interaction it will wo
 		let modal = document.querySelector('#dialog') // Now one for our `dialog`. // we are slecting each button with the id a dialog and storing it inside modle for pop up
 		let modalImage = document.querySelector('#dialogImage');// look inside the modle for the element ID dialogeimage
 		let closeButton = modal.querySelector('.close')// looking for the lement class  close withing that modal
+		let modelVideo = document.querySelector('#dialogVideo')
 
 		// loop though a look for a button dialog and image
 
@@ -347,7 +343,11 @@ let ineraction = () => { // i am defining a fuction named interaction it will wo
 		openButton.onclick = () => {
 			// dialog.showModal()
 			console.log(modalImage.src)
+			// get rid of data from image src of the old video and images 
+			modalImage.src = ""; //no extra images on sorce
+			modelVideo.src = "";
 			modal.show() // This opens it up.
+		
 			console.log('pewpewpewpew')
 			// and shoes the image we selected
 			modalImage.src = block.querySelector("img").src;
@@ -389,21 +389,27 @@ let videoineraction = () => { // i am defining a fuction named interaction it wi
 	videoBlocks.forEach((block) => { // applying the logic to each individual block // This is a for loop
 		let openButton = block.querySelector('button') // we find the button inside each image block and the stores it  in open button
 		let modal = document.querySelector('#dialog') // Now one for our `dialog`. // we are slecting each button with the id a dialog and storing it inside modle for pop up
-		let modalImage = document.querySelector('#dialogVideo');// look inside the modle for the element ID dialogeimage
+		let modalVideo = document.querySelector('#dialogVideo');// look inside the modle for the element ID dialogeimage
 		let closeButton = modal.querySelector('.close')// looking for the lement class  close withing that modal
+		let modalImage = document.querySelector('#dialogImage')
+		
 
 		// loop though a look for a button dialog and image
 
 
-console.log(modalImage)
+
 		// lisen for button click
 		openButton.onclick = () => {
+			
 			// dialog.showModal()
-			console.log(modalImage.src)
+		
+			// get rid of data from image src of the old video and images 
+			modalImage.src = ""; //no extra images on sorce
+			modalVideo.src = "";
 			modal.show() // This opens it up.
 			console.log('pewpewpewpew')
 			// and shoes the image we selected
-			modalImage.src = block.querySelector("video").src;
+			modalVideo.src = block.querySelector("video").src;
 			
 
 			console.log("clicked")
@@ -418,7 +424,10 @@ console.log(modalImage)
 		closeButton.onclick = () => {
 			modal.close() // And this closes it!
 			bigSun.classList.remove("white-background") // remove white background
-			modalImage.src = ""; //no extra images on sorce
+			
+				modalImage.src = ""; //no extra images on sorce
+			modelVideo.src = "";
+			
 
 		}
 		modal.addEventListener("close", () => {
@@ -428,6 +437,7 @@ console.log(modalImage)
 		modal.onclick = (event) => { // Listen on our `modal` also…
 			if (event.target == modal) { // Only if clicks are to itself (the background).
 				modal.close() // Close it then too.
+				modalVideo.src = ""; //no extra images on sorce
 				modalImage.src = ""; //no extra images on sorce
 			}
 		}
