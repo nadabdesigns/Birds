@@ -44,7 +44,7 @@ dialog[open] {
 	
 
 }
-#dialogImage{
+#dialogImage, #dialogVideo{
 	max-width: 60vh;
 	max-height: 60vh;
 }
@@ -71,6 +71,7 @@ dialog {
 ::backdrop {
 	background-color: rgb(0 0 0 / 75%); /* A dark overlay. */
 	backdrop-filter: blur(8px); /* Maybe a little “glassmorphism”? */
+	
 }
 
 
