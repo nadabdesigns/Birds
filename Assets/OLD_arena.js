@@ -226,7 +226,7 @@ let renderBlock = (block) => {
 		<button class ="buttonClass">
 		
 				
-				<p>${block.title || block.generated_title}></p>
+				<p><figcaption>${block.title || block.generated_title}</figcaption> </p>
 			
 
 					
@@ -268,7 +268,7 @@ let renderBlock = (block) => {
 		
 		
 		
-					<p>${block.title || block.generated_title}></p>
+					<p><figcaption>${block.title || block.generated_title}</figcaption></p>
 					 <img src="${block.image.large.url}" style = 'display:none' alt="${block.title} by ${block.user.full_name}"> 
 					
 					</button>
@@ -285,10 +285,10 @@ let renderBlock = (block) => {
 			// console.log('audio', block)
 			let audioItem =
 				`
-				<li>
+				
 					<audio controls src="${block.attachment.url}"></audio>
-					<p>${block.title}</p>
-				</li>
+					<p><figcaption>${block.title}</figcaption></p>
+				
 				`
 			channelBlocks.insertAdjacentHTML('beforeend', audioItem)
 			// More on audio: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/audio
@@ -311,7 +311,7 @@ let renderBlock = (block) => {
 				<div class="videoBlocks">
 					<p><${block.title || block.generated_title}</p>
 					${block.embed.html}
-				</li>
+				</div>
 				`
 			channelBlocks.insertAdjacentHTML('beforeend', linkedVideoItem)
 			// More on iframe: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe
