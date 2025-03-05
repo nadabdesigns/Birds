@@ -42,7 +42,7 @@ let placeChannelInfo = (data) => {
 
 // Then our big function for specific-block-type rendering:
 let renderBlock = (block) => {
-	
+
 	// To start, a shared `ul` where we’ll insert all our blocks
 	let channelBlocks = document.querySelector('#all-blocks');
 
@@ -82,10 +82,10 @@ let renderBlock = (block) => {
 	// cecking block to see if it's an image
 	else if (block.class == 'Image') {
 		let imageItem =
-	
-		`<div class="image-bloc">
+
+			`<div class="image-bloc">
 		<button class ="buttonClass">
-		<img src="${block.image.large.url}" alt="${block.title} by ${block.user.full_name}">
+		 <img src="${block.image.large.url}" alt="${block.title} by ${block.user.full_name}">
 		 <figcaption> ${block.title}</figcaption>
 		</button>
 		<dialogue></dialogue>
@@ -100,7 +100,7 @@ let renderBlock = (block) => {
 		// we have to add the src ( where is the image being fetched)
 
 		// declaring a varible called dots
-		
+
 		// sorce is where you would place the url
 		// alt is the alt if the image doesnt display 
 		// if the image has a title it will use block.title and if not it will be Bird image
@@ -126,36 +126,36 @@ let renderBlock = (block) => {
 		// on a different linke we displayed the full name of the block 
 		// arena displays the name of the user who created the image originally
 		// all titles 
-		
+
 
 
 
 		// create and image 
 		// if the block title is not equal to  donts.svg then run the following fuction 
 		let button = document.querySelector('#example')
-		
-	
-		
-		
-	
-		
-		
+
+
+
+
+
+
+
 	}
 	// Make a button for images from Lume
 	else if (block.class == 'Image') {
 
 		// 	// create image
 		console.log('imageeeeee')
-		
-	
-		}
-		
-		
+
+
+	}
+
+
 
 	// time to use this on a specific SVG but using a different varable
 	// else if (block.class == 'Image') {
 
-		
+
 	// 	let imageItem =
 
 	// 		`
@@ -198,7 +198,7 @@ let renderBlock = (block) => {
 
 	// Uploaded (not linked) media…
 	else if (block.class == 'Attachment') {
-		
+
 		let attachment = block.attachment.content_type // Save us some repetition
 
 		// Uploaded videos!
@@ -206,18 +206,20 @@ let renderBlock = (block) => {
 		if (attachment.includes('video')) {
 			// …still up to you, but we’ll give you the `video` element:
 			console.log(block)
-			
+
 
 			let videoItem =
 				`
 				<div class="image-bloc">
+				<button>
 				<p>${block.title || block.generated_title}></p>
 				<div class='UploadedVideoBlock'>
 
 					
 					<video controls src="${block.attachment.url}"></video>
-				</li>
+				</button>
 				</div>
+
 				`
 			// <p><em>${block.title || block.generated_title}</em></p>
 			channelBlocks.insertAdjacentHTML('beforeend', videoItem)
@@ -238,7 +240,7 @@ let renderBlock = (block) => {
 					<p>${block.title || block.generated_title}></p>
 				
 				`
-				channelBlocks.insertAdjacentHTML('beforeend', PDFItem)
+			channelBlocks.insertAdjacentHTML('beforeend', PDFItem)
 			// …up to you!
 		}
 
@@ -287,48 +289,50 @@ let renderBlock = (block) => {
 		}
 	}
 }
-// from lume
-let ineraction = () =>{
-	console.log()
-	let imageBlocks = document.querySelectorAll ('.image-bloc')
-	imageBlocks.forEach((block)=> {
-		let openButton = block.querySelector('button')
-		let modal = document.querySelector('#dialog') // Now one for our `dialog`.
-		let modalImage = document.querySelector('#dialogImage');
-		let closeButton = modal.querySelector('.close')
+// from lume and coding tutor they showed me how to set up and trigger a model with an image inside it useing a fuction
+let ineraction = () => { // i am defining a fuction named interaction it will work every time it is called
+	console.log() // 
+	let imageBlocks = document.querySelectorAll('.image-bloc') // we are seleting all images with the class image block
+	imageBlocks.forEach((block) => { // applying the logic to each individual block
+		let openButton = block.querySelector('button') // we find the button inside each image block and the stores it  in open button
+		let modal = document.querySelector('#dialog') // Now one for our `dialog`. // we are slecting each button with the id a dialog and storing it inside modle for pop up
+		let modalImage = document.querySelector('#dialogImage');// look inside the modle for the element ID dialogeimage
+		let closeButton = modal.querySelector('.close')// looking for the lement class  close withing that modal
 
 
 
-// lisen for button click
-openButton.onclick = () =>{
-	// dialog.showModal()
-	console.log(modalImage.src)
-	modal.show() // This opens it up.
-	// we
-	modalImage.src = block.querySelector("img").src;
+		// lisen for button click
+		openButton.onclick = () => {
+			// dialog.showModal()
+			console.log(modalImage.src)
+			modal.show() // This opens it up.
+			console.log('pewpewpewpew')
+			// and shoes the image we selected
+			modalImage.src = block.querySelector("img").src;
 
-	console.log("clicked")
-	bigSun.classList.add("white-background");//make other circle witw
-
-	
-
+			console.log("clicked")
+			bigSun.classList.add("white-background");//make other circle go white
 
 
-}
-closeButton.onclick = () => {
-	modal.close() // And this closes it!
-	bigSun.classList.remove("white-background")
-	
-}
-modal.addEventListener("close", () => {
-	bigSun.style.backgroundColor = ""; // Reset to original background
-});
 
-modal.onclick = (event) => { // Listen on our `modal` also…
-	if (event.target == modal) { // Only if clicks are to itself (the background).
-		modal.close() // Close it then too.
-	}
-}
+
+
+		}
+		// close it
+		closeButton.onclick = () => {
+			modal.close() // And this closes it!
+			bigSun.classList.remove("white-background") // remove white background
+
+		}
+		modal.addEventListener("close", () => {
+			bigSun.style.backgroundColor = ""; // Reset to original background
+		});
+
+		modal.onclick = (event) => { // Listen on our `modal` also…
+			if (event.target == modal) { // Only if clicks are to itself (the background).
+				modal.close() // Close it then too.
+			}
+		}
 
 
 	})
