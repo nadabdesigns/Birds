@@ -48,7 +48,7 @@ dialog[open] {
 	max-width: 60vh;
 	max-height: 60vh;
 }
-button {
+button , p {
 	font-family: "Space Grotesk";
 	font-size: 25px;
 	width: 100%;
