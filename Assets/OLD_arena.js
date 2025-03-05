@@ -169,7 +169,7 @@ let renderBlock = (block) => {
 			`
 			<div>
 	
-		<p class="firstText">${block.title}</p>
+		<p> <figcaption>${block.title}</figcaption></p>
 		<p>${block.content_html}</p>
 		
 		</div>
